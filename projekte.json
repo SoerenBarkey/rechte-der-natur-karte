@@ -1,0 +1,74 @@
+[
+  {
+    "id": "spree",
+    "name": "Spree – Rechte der Natur",
+    "lat": 52.5200,
+    "lng": 13.4050,
+    "kategorie": "fluss",
+    "status": "initiative",
+    "land": "Deutschland",
+    "beschreibung": "Berliner Bürgerinitiative für die rechtliche Anerkennung der Spree als Rechtssubjekt.",
+    "url": "https://beispiel.de/spree",
+    "tags": ["Berlin", "Bürgerinitiative", "Urban"]
+  },
+  {
+    "id": "elbe",
+    "name": "Elbe – Flussrechte",
+    "lat": 53.5500,
+    "lng": 10.0000,
+    "kategorie": "fluss",
+    "status": "initiative",
+    "land": "Deutschland",
+    "beschreibung": "Kampagne zur Verleihung von Persönlichkeitsrechten an die Elbe.",
+    "url": "#",
+    "tags": ["Hamburg", "Petition"]
+  },
+  {
+    "id": "pader",
+    "name": "Pader – Rechte der Natur",
+    "lat": 51.7189,
+    "lng": 8.7539,
+    "kategorie": "fluss",
+    "status": "aktiv",
+    "land": "Deutschland",
+    "beschreibung": "Kommunale Initiative für die Rechte des Quellflüsschens Pader in Paderborn.",
+    "url": "https://www.tatort-paderborn.de/de",
+    "tags": ["Paderborn", "Kommunal", "Quellfluss"]
+  },
+  {
+    "id": "loisach",
+    "name": "Loisach",
+    "lat": 47.371389,
+    "lng": 10.872722,
+    "kategorie": "fluss",
+    "status": "initiative",
+    "land": "Deutschland",
+    "beschreibung": "Initiative und Kunstprojekt für die Rechte der Loisach.",
+    "url": "https://taz.de/Fluesse-in-bayerischer-Landesverfassung/!5882167/",
+    "tags": ["Bayern", "Film"]
+  },
+  {
+    "id": "isar",
+    "name": "Isar",
+    "lat": 47.375556,
+    "lng": 11.408056,
+    "kategorie": "fluss",
+    "status": "initiative",
+    "land": "Deutschland",
+    "beschreibung": "Initiative für die Rechte der Isar.",
+    "url": "https://gibdernaturrecht.muc-mib.de/",
+    "tags": ["Fluss"]
+  },
+  {
+    "id": "saar",
+    "name": "Saar",
+    "lat": 48.67675,
+    "lng": 7.0125,
+    "kategorie": "fluss",
+    "status": "initiative",
+    "land": "Deutschland",
+    "beschreibung": "Initiative für die Rechte der Saar.",
+    "url": "https://cure.uni-saarland.de/fr/evenements/the-saar-as-a-worker-la-sarre-ouvriere/",
+    "tags": ["Bürger:innen-Forum", "Transnational"]
+  }
+]
