@@ -115,6 +115,21 @@
     ],
     "tags": ["Fluss", "Veranstaltung", "Transnational", "Saarbrücken"]
   },
+  
+  {
+    "id": "elbe",
+    "name": "Elbe – Flussrechte",
+    "lat": 53.5500,
+    "lng": 10.0000,
+    "kategorie": "fluss",
+    "status": "initiative",
+    "land": "Deutschland",
+    "beschreibung": "Kampagne zur Verleihung von Persönlichkeitsrechten an die Elbe.",
+    "links": [
+      { "label": "Veranstaltung", "url": "https://hias-hamburg.de/events/das-wesen-der-elbe-interdisziplinaere-perspektiven-auf-den-fluss-unserer-stadt/" }
+    ],
+    "tags": ["Hamburg"]
+  },
   {
     "id": "oder",
     "name": "Oder (Odra)",
