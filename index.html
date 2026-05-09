@@ -149,6 +149,9 @@
     .badge-aktiv { background: #d1fae5; color: #065f46; }
     .badge-gesetz { background: #dbeafe; color: #1e40af; }
     .badge-geplant { background: #f3e8ff; color: #6b21a8; }
+    .badge-gesetzentwurf { background: #e0f2fe; color: #0369a1; }
+    .badge-kunstprojekt { background: #fce7f3; color: #9d174d; }
+    .badge-veranstaltung { background: #f0fdf4; color: #166534; }
 
     .card-desc { font-size: 0.79rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 6px; }
     .card-tags { display: flex; flex-wrap: wrap; gap: 4px; }
@@ -227,7 +230,9 @@
   <button class="filter-btn" data-filter="fluss">🫧 Flüsse</button>
   <button class="filter-btn" data-filter="oekosystem">🌲 Ökosysteme</button>
   <button class="filter-btn" data-filter="meer">🌊 Meere & Seen</button>
-  <button class="filter-btn" data-filter="gesetz">📜 Gesetzgebung</button>
+  <button class="filter-btn" data-filter="kunst">🎨 Kunstprojekte</button>
+  <button class="filter-btn" data-filter-status="gesetzentwurf">📋 Gesetzentwürfe</button>
+  <button class="filter-btn" data-filter="gesetz">📜 Gesetze</button>
 </div>
 
 <div class="main-layout">
@@ -270,10 +275,13 @@ const CATEGORY_COLORS = {
 };
 
 const STATUS_CONFIG = {
-  initiative: { label: 'Initiative',  cls: 'badge-initiative' },
-  aktiv:      { label: 'Aktiv',       cls: 'badge-aktiv' },
-  gesetz:     { label: 'Gesetz',      cls: 'badge-gesetz' },
-  geplant:    { label: 'Geplant',     cls: 'badge-geplant' },
+  initiative:    { label: 'Initiative',    cls: 'badge-initiative' },
+  aktiv:         { label: 'Aktiv',         cls: 'badge-aktiv' },
+  gesetz:        { label: 'Gesetz',        cls: 'badge-gesetz' },
+  geplant:       { label: 'Geplant',       cls: 'badge-geplant' },
+  gesetzentwurf: { label: 'Gesetzentwurf', cls: 'badge-gesetzentwurf' },
+  kunstprojekt:  { label: 'Kunstprojekt',  cls: 'badge-kunstprojekt' },
+  veranstaltung: { label: 'Veranstaltung', cls: 'badge-veranstaltung' },
 };
 
 function makeIcon(kategorie, selected = false) {
@@ -296,6 +304,7 @@ let allProjekte = [];
 let markers = {};
 let activeCard = null;
 let activeFilter = 'alle';
+let activeFilterType = 'kategorie'; // 'kategorie' or 'status'
 
 async function loadData() {
   try {
@@ -323,7 +332,9 @@ function render() {
 
   const visible = activeFilter === 'alle'
     ? allProjekte
-    : allProjekte.filter(p => p.kategorie === activeFilter);
+    : activeFilterType === 'status'
+      ? allProjekte.filter(p => p.status === activeFilter)
+      : allProjekte.filter(p => p.kategorie === activeFilter);
 
   // Sidebar
   const list = document.getElementById('project-list');
@@ -420,7 +431,13 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    activeFilter = btn.dataset.filter;
+    if (btn.dataset.filterStatus) {
+      activeFilter = btn.dataset.filterStatus;
+      activeFilterType = 'status';
+    } else {
+      activeFilter = btn.dataset.filter;
+      activeFilterType = 'kategorie';
+    }
     activeCard = null;
     render();
   });
@@ -440,6 +457,72 @@ const BEISPIELDATEN = [
     beschreibung: "Berliner Bürgerinitiative für die rechtliche Anerkennung der Spree als Rechtssubjekt.",
     url: "#",
     tags: ["Berlin", "Bürgerinitiative", "Urban"]
+  },
+  {
+    id: "elbe",
+    name: "Elbe – Flussrechte",
+    lat: 53.5500, lng: 10.0000,
+    kategorie: "fluss",
+    status: "initiative",
+    land: "Deutschland",
+    beschreibung: "Kampagne zur Verleihung von Persönlichkeitsrechten an die Elbe.",
+    url: "#",
+    tags: ["Hamburg", "Petition"]
+  },
+  {
+    id: "pader",
+    name: "Pader – Rechte der Natur",
+    lat: 51.7189, lng: 8.7539,
+    kategorie: "fluss",
+    status: "aktiv",
+    land: "Deutschland",
+    beschreibung: "Kommunale Initiative für die Rechte des Quellflüsschens Pader in Paderborn.",
+    url: "#",
+    tags: ["Paderborn", "Kommunal", "Quellfluss"]
+  },
+  {
+    id: "mar-menor",
+    name: "Mar Menor (Spanien)",
+    lat: 37.7200, lng: -0.7800,
+    kategorie: "meer",
+    status: "gesetz",
+    land: "Spanien",
+    beschreibung: "Erstes Ökosystem Europas mit gesetzlich verankerten Eigenrechten (2022).",
+    url: "https://www.bbc.com/news/world-europe-58921884",
+    tags: ["Spanien", "Gesetz", "Vorbild", "2022"]
+  },
+  {
+    id: "waddenzee",
+    name: "Wattenmeer Initiative",
+    lat: 53.2600, lng: 5.2300,
+    kategorie: "oekosystem",
+    status: "initiative",
+    land: "Niederlande",
+    beschreibung: "Niederländisch-deutsche Initiative für Rechte des UNESCO-Wattenmeers.",
+    url: "#",
+    tags: ["Niederlande", "UNESCO", "Grenzüberschreitend"]
+  },
+  {
+    id: "rhein",
+    name: "Rhein – Rechtssubjekt",
+    lat: 50.9413, lng: 6.9583,
+    kategorie: "fluss",
+    status: "geplant",
+    land: "Deutschland",
+    beschreibung: "Transnationaler Ansatz für Persönlichkeitsrechte des Rheins über Landesgrenzen.",
+    url: "#",
+    tags: ["Köln", "International", "Transnatonal"]
+  },
+  {
+    id: "schwarzwald",
+    name: "Schwarzwald-Ökosystem",
+    lat: 48.1000, lng: 8.2000,
+    kategorie: "oekosystem",
+    status: "initiative",
+    land: "Deutschland",
+    beschreibung: "Forschungs- und Rechtsprojekt zu Waldrechten im Schwarzwald.",
+    url: "#",
+    tags: ["Baden-Württemberg", "Wald", "Forschung"]
   }
 ];
 
