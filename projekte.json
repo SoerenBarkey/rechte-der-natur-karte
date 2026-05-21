@@ -9,7 +9,8 @@
     "land": "Deutschland",
     "beschreibung": "Bayerisches Volksbegehren \"Rechte der Natur\" will der natürlichen Mitwelt, etwa der Isar, eigene Rechte in der Verfassung geben.",
     "links": [
-      { "label": "Volksbegehren", "url": "https://gibdernaturrecht.muc-mib.de/" }
+      { "label": "Volksbegehren", "url": "https://gibdernaturrecht.muc-mib.de/" },
+      { "label": "Kunstprojekt \"Flussabwärts denken\"", "url": "https://www.publicartmuenchen.de/projekte/flussabwaerts-denken/" }
     ],
     "tags": ["Fluss", "Volksbegehren", "Bayern"]
   },
