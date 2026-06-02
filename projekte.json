@@ -145,5 +145,24 @@
       { "label": "Gesetzentwurf (EN)", "url": "https://osobaodra.pl/en/draft-bill/" }
     ],
     "tags": ["Fluss", "Gesetzentwurf", "Polen", "Transnational", "Grenzfluss"]
+  },
+  {
+    "id": "mar_menor",
+    "name": "Mar Menor",
+    "lat": 37.7188,
+    "lng":  -0.7872,
+    "kategorie": "meer",
+    "status": "gesetz",
+    "land": "Spanien",
+    "beschreibung": "Anerkennung als Rechtssubjekt in Folge eines Volksbegehrens. Bürger:innen können stellvertretend vor Gericht klagen. Gesetz verabschiedet im Jahr 2022.",
+    "links": [
+      { "label": "Gesetz", "url": "https://www.rechte-der-natur.de/files/opensauce/pdf/Gesetzestext%20Mar%20Menor%20%C3%BCbersetzt.pdf" }
+    ],
+    "tags": ["Lagune", "Gesetz", "Spanien", "Rechtssubjekt"]
   }
 ]
+
+
+
+
+
