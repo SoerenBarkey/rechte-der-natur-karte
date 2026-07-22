@@ -212,6 +212,7 @@
 </head>
 <body>
 
+<!--
 <header>
   <div class="header-title">
     <h1>Rechte der Natur</h1>
@@ -223,6 +224,7 @@
     <div class="stat"><div class="stat-num" id="count-laender">—</div><div class="stat-label">Länder</div></div>
   </div>
 </header>
+  -->
 
 <div class="filter-bar">
   <span class="filter-label">Filtern:</span>
@@ -246,10 +248,12 @@
   </aside>
 </div>
 
+<!--
 <footer>
   Diese Karte ist ein offenes Community-Projekt. Kennst du weitere Initiativen? <a href="mailto:barkey@uni-potsdam.de">Schreib uns!</a>
   &nbsp;·&nbsp; Kartendaten: <a href="https://openstreetmap.org">© OpenStreetMap</a>
 </footer>
+-->
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
@@ -314,7 +318,7 @@ async function loadData() {
     console.warn('projekte.json nicht gefunden, lade Beispieldaten.');
     allProjekte = BEISPIELDATEN;
   }
-  initStats();
+  //initStats();
   render();
 }
 
