@@ -1,0 +1,128 @@
+name: Neuer Eintrag
+description: Einen neuen Eintrag für die Datensammlung vorschlagen
+title: "[Neuer Eintrag] "
+labels:
+  - neuer-eintrag
+
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Neuer Eintrag
+
+        Bitte fülle die folgenden Felder aus.
+        
+        Die Angaben werden anschließend geprüft und in die Datensammlung übernommen.
+
+  - type: input
+    id: id
+    attributes:
+      label: ID
+      description: Eine kurze, eindeutige ID für den Eintrag, z. B. "isar". Bitte hier die Kleinschreibung beachten.
+      placeholder: "isar"
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: Der Name des Flusses, Projekts, Ortes etc.
+      placeholder: "Isar"
+    validations:
+      required: true
+
+  - type: input
+    id: lat
+    attributes:
+      label: Breitengrad
+      description: Breitengrad des Eintrags, falls bekannt. Bitte mit Punkt statt Komma angeben. 
+      placeholder: "47.375556"
+    validations:
+      required: false
+
+  - type: input
+    id: lng
+    attributes:
+      label: Längengrad
+      description: Längengrad des Eintrags, falls bekannt. Bitte mit Punkt statt Komma angeben. 
+      placeholder: "11.408056"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: kategorie
+    attributes:
+      label: Kategorie
+      description: Bitte wähle eine oder mehrere passende Kategorien. 
+      multiple: true
+      options:
+        - Flüsse
+        - Wald
+        - Meere & Seen
+        - Gesetzesentwürfe
+        - Gesetz
+        - Kunst & Kultur
+        - Literatur
+        - Vereine, Stiftungen & NGOs
+        - Wissenschaft
+        - Rechtsexpert:innen
+        - Zivilgesellschaft
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      description: Bitte wähle den aktuellen Status des Eintrags. Wenn nichts passt, wähle bitte "Initiative".
+      options:
+        - Initiative
+        - Gesetzesentwurf
+        - Gesetz
+    validations:
+      required: true
+
+  - type: input
+    id: land
+    attributes:
+      label: Land
+      description: In welchem Land befindet sich der Eintrag?
+      placeholder: "Deutschland"
+    validations:
+      required: true
+
+  - type: textarea
+    id: beschreibung
+    attributes:
+      label: Beschreibung
+      description: Eine kurze Beschreibung des Eintrags.
+      placeholder: |
+        Hier kannst du die Beschreibung eingeben ...
+      render: false
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Webseite
+      description: Falls vorhanden, die URL zur Webseite des Eintrags.
+      placeholder: "https://example.org"
+    validations:
+      required: false
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Mehrere Tags bitte durch Kommata trennen.
+      placeholder: "Fluss, Bayern"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        Vielen Dank! Nach dem Absenden wird der Eintrag geprüft und anschließend in die Datensammlung übernommen.
