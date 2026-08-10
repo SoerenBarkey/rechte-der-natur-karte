@@ -28,7 +28,7 @@ body:
     id: name
     attributes:
       label: Name
-      description: Der Name des Flusses, Projekts, Ortes etc.
+      description: Der Name des Flusses, Projekts, Vereins etc.
       placeholder: "Isar"
     validations:
       required: true
@@ -37,7 +37,7 @@ body:
     id: lat
     attributes:
       label: Breitengrad
-      description: Breitengrad des Eintrags, falls bekannt. Bitte mit Punkt statt Komma angeben. 
+      description: Breitengrad des Eintrags, falls bekannt. Bitte mit Punkt statt Komma angeben. Alternativ gerne hier den Ort als Text angeben. 
       placeholder: "47.375556"
     validations:
       required: false
