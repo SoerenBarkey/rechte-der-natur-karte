@@ -1,3 +1,4 @@
+```yaml
 name: Neuer Eintrag
 description: Einen neuen Eintrag für die Datensammlung vorschlagen
 title: "[Neuer Eintrag] "
@@ -12,7 +13,7 @@ body:
         ## Neuer Eintrag
 
         Bitte fülle die folgenden Felder aus.
-        
+
         Die Angaben werden anschließend geprüft und in die Datensammlung übernommen.
 
   - type: input
@@ -34,41 +35,31 @@ body:
       required: true
 
   - type: input
-    id: lat
+    id: ort
     attributes:
-      label: Breitengrad
-      description: Breitengrad des Eintrags, falls bekannt. Bitte mit Punkt statt Komma angeben. Alternativ gerne hier den Ort als Text angeben. 
-      placeholder: "47.375556"
+      label: Ort oder Koordinaten
+      description: Gib entweder einen Ort an, z. B. "München", oder direkt Breitengrad und Längengrad im Format "47.375556, 11.408056".
+      placeholder: "München"
     validations:
-      required: false
+      required: true
 
-  - type: input
-    id: lng
-    attributes:
-      label: Längengrad
-      description: Längengrad des Eintrags, falls bekannt. Bitte mit Punkt statt Komma angeben. 
-      placeholder: "11.408056"
-    validations:
-      required: false
-
-  - type: dropdown
+  - type: checkboxes
     id: kategorie
     attributes:
       label: Kategorie
-      description: Bitte wähle eine oder mehrere passende Kategorien. 
-      multiple: true
+      description: Bitte wähle eine oder mehrere passende Kategorien.
       options:
-        - Flüsse
-        - Wald
-        - Meere & Seen
-        - Gesetzesentwürfe
-        - Gesetz
-        - Kunst & Kultur
-        - Literatur
-        - Vereine, Stiftungen & NGOs
-        - Wissenschaft
-        - Rechtsexpert:innen
-        - Zivilgesellschaft
+        - label: Flüsse
+        - label: Wald
+        - label: Meere & Seen
+        - label: Gesetzesentwürfe
+        - label: Gesetz
+        - label: Kunst & Kultur
+        - label: Literatur
+        - label: Vereine, Stiftungen & NGOs
+        - label: Wissenschaft
+        - label: Rechtsexpert:innen
+        - label: Zivilgesellschaft
     validations:
       required: true
 
@@ -100,7 +91,6 @@ body:
       description: Eine kurze Beschreibung des Eintrags.
       placeholder: |
         Hier kannst du die Beschreibung eingeben ...
-      render: false
     validations:
       required: true
 
@@ -126,3 +116,4 @@ body:
     attributes:
       value: |
         Vielen Dank! Nach dem Absenden wird der Eintrag geprüft und anschließend in die Datensammlung übernommen.
+```
