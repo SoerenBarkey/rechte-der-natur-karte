@@ -35,16 +35,42 @@ jobs:
               return value;
             }
 
+            function getCheckboxes(label) {
+              const value = clean(getField(label));
+            
+              if (!value) {
+                return [];
+              }
+            
+              return value
+                .split("\n")
+                .filter(line => line.startsWith("- [x]"))
+                .map(line => line.replace("- [x]", "").trim());
+            }
+            
+            function getTags(label) {
+              const value = clean(getField(label));
+            
+              if (!value) {
+                return [];
+              }
+            
+              return value
+                .split(",")
+                .map(tag => tag.trim())
+                .filter(tag => tag.length > 0);
+            }
+            
             const data = {
               id: clean(getField("ID")),
               name: clean(getField("Name")),
               ort: clean(getField("Ort oder Koordinaten")),
-              kategorie: clean(getField("Kategorie")),
+              kategorie: getCheckboxes("Kategorie"),
               status: clean(getField("Status")),
               land: clean(getField("Land")),
               beschreibung: clean(getField("Beschreibung")),
               url: clean(getField("Webseite")),
-              tags: clean(getField("Tags"))
+              tags: getTags("Tags")
             };
 
             core.setOutput("json", JSON.stringify(data, null, 2));
