@@ -1,1 +1,218 @@
+name: Geprüften Eintrag übernehmen
 
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  import-entry:
+    # Nur reagieren, wenn genau dieses Label gesetzt wurde.
+    if: github.event.label.name == 'bereit-zur-übernahme'
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: JSON-Vorschlag aus Issue auslesen
+        id: issue-data
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const body = issue.body || "";
+
+            function getField(label) {
+              const regex = new RegExp(
+                `### ${label}\\s*\\n\\n([\\s\\S]*?)(?=\\n### |$)`
+              );
+
+              const match = body.match(regex);
+
+              if (!match) {
+                return "";
+              }
+
+              const value = match[1].trim();
+
+              return value === "_No response_" ? "" : value;
+            }
+
+            function getCheckboxes(label) {
+              const value = getField(label);
+
+              if (!value) {
+                return [];
+              }
+
+              return value
+                .split("\n")
+                .filter(line => line.startsWith("- [x]"))
+                .map(line => line.replace("- [x]", "").trim());
+            }
+
+            function getTags(label) {
+              const value = getField(label);
+
+              if (!value) {
+                return [];
+              }
+
+              return value
+                .split(",")
+                .map(tag => tag.trim())
+                .filter(Boolean);
+            }
+
+            const categoryMap = {
+              "Flüsse": "fluss",
+              "Wald": "wald",
+              "Meere & Seen": "meer",
+              "Gesetzesentwürfe": "gesetzentwurf",
+              "Kunst & Kultur": "kunst",
+              "Literatur": "literatur",
+              "Vereine, Stiftungen & NGOs": "vereine",
+              "Wissenschaft": "wissenschaft",
+              "Rechtsexpert:innen": "recht",
+              "Zivilgesellschaft": "zivil"
+            };
+
+            const statusMap = {
+              "Initiative": "initiative",
+              "Gesetzesentwurf": "gesetzentwurf",
+              "Gesetz": "gesetz"
+            };
+
+            const categories = getCheckboxes("Kategorie");
+
+            const mappedCategories = categories
+              .map(category => categoryMap[category])
+              .filter(Boolean);
+
+            let kategorie;
+
+            if (mappedCategories.length === 1) {
+              kategorie = mappedCategories[0];
+            } else {
+              kategorie = mappedCategories;
+            }
+
+            const status = getField("Status");
+
+            const data = {
+              id: getField("ID"),
+              name: getField("Name"),
+              lat: null,
+              lng: null,
+              kategorie,
+              status: statusMap[status] || status.toLowerCase(),
+              land: getField("Land"),
+              beschreibung: getField("Beschreibung"),
+              links: [],
+              tags: getTags("Tags")
+            };
+
+            const url = getField("Webseite");
+
+            if (url) {
+              data.links.push({
+                label: "Webseite",
+                url: url
+              });
+            }
+
+            const ort = getField("Ort oder Koordinaten");
+
+            const coordinateMatch = ort.match(
+              /^\s*(-?\d+(?:[.,]\d+)?)\s*[,;]\s*(-?\d+(?:[.,]\d+)?)\s*$/
+            );
+
+            if (!coordinateMatch) {
+              core.setFailed(
+                `Keine direkten Koordinaten gefunden. ` +
+                `Für diesen ersten Import-Test muss das Feld ` +
+                `"Ort oder Koordinaten" bereits Koordinaten enthalten.`
+              );
+              return;
+            }
+
+            data.lat = Number(
+              coordinateMatch[1].replace(",", ".")
+            );
+
+            data.lng = Number(
+              coordinateMatch[2].replace(",", ".")
+            );
+
+            core.setOutput(
+              "json",
+              JSON.stringify(data, null, 2)
+            );
+
+      - name: Eintrag in projekte.json übernehmen
+        env:
+          JSON_DATA: ${{ steps.issue-data.outputs.json }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import sys
+
+          path = "projekte.json"
+
+          with open(path, "r", encoding="utf-8") as f:
+              projects = json.load(f)
+
+          new_entry = json.loads(os.environ["JSON_DATA"])
+
+          new_id = new_entry["id"]
+
+          if any(
+              project.get("id") == new_id
+              for project in projects
+          ):
+              print(f"Fehler: ID '{new_id}' existiert bereits.")
+              sys.exit(1)
+
+          projects.append(new_entry)
+
+          with open(path, "w", encoding="utf-8") as f:
+              json.dump(
+                  projects,
+                  f,
+                  ensure_ascii=False,
+                  indent=2
+              )
+              f.write("\n")
+
+          print(f"Eintrag '{new_id}' wurde hinzugefügt.")
+
+      - name: Pull Request erstellen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BRANCH="add-issue-${{ github.event.issue.number }}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git checkout -b "$BRANCH"
+
+          git add projekte.json
+          git commit -m "Add entry from issue #${{ github.event.issue.number }}"
+          git push origin "$BRANCH"
+
+          gh pr create \
+            --title "Eintrag aus Issue #${{ github.event.issue.number }}" \
+            --body "Automatisch erzeugt aus #${{ github.event.issue.number }}." \
+            --base main \
+            --head "$BRANCH"
