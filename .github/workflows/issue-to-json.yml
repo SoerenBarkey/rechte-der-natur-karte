@@ -12,9 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Formularantworten auslesen
+      - name: Formularantworten auslesen und JSON erzeugen
         id: form
         uses: actions/github-script@v7
+        env:
+          NOMINATIM_USER_AGENT: "GitHub Issue Form / eure-datensammlung"
         with:
           script: |
             const issue = context.payload.issue;
@@ -32,61 +34,164 @@ jobs:
               if (!value || value === "_No response_") {
                 return "";
               }
-              return value;
+              return value.trim();
             }
 
             function getCheckboxes(label) {
               const value = clean(getField(label));
-            
+
               if (!value) {
                 return [];
               }
-            
+
               return value
                 .split("\n")
                 .filter(line => line.startsWith("- [x]"))
                 .map(line => line.replace("- [x]", "").trim());
             }
-            
+
             function getTags(label) {
               const value = clean(getField(label));
-            
+
               if (!value) {
                 return [];
               }
-            
+
               return value
                 .split(",")
                 .map(tag => tag.trim())
                 .filter(tag => tag.length > 0);
             }
-            
+
+            const categoryMap = {
+              "Flüsse": "fluss",
+              "Wald": "wald",
+              "Meere & Seen": "meer",
+              "Gesetzesentwürfe": "gesetzentwurf",
+              "Kunst & Kultur": "kunst",
+              "Literatur": "literatur",
+              "Vereine, Stiftungen & NGOs": "vereine",
+              "Wissenschaft": "wissenschaft",
+              "Rechtsexpert:innen": "recht",
+              "Zivilgesellschaft": "zivil"
+            };
+
+            const statusMap = {
+              "Initiative": "initiative",
+              "Gesetzesentwurf": "gesetzentwurf",
+              "Gesetz": "gesetz"
+            };
+
+            const id = clean(getField("ID"));
+            const name = clean(getField("Name"));
+            const ort = clean(getField("Ort oder Koordinaten"));
+            const categories = getCheckboxes("Kategorie");
+            const status = clean(getField("Status"));
+            const land = clean(getField("Land"));
+            const beschreibung = clean(getField("Beschreibung"));
+            const url = clean(getField("Webseite"));
+            const tags = getTags("Tags");
+
+            const kategorie = categories
+              .map(category => categoryMap[category])
+              .filter(Boolean);
+
+            const normalizedStatus = statusMap[status] || status.toLowerCase();
+
+            let lat = null;
+            let lng = null;
+            let locationMessage = "";
+
+            // Prüfen, ob der Nutzer bereits Koordinaten eingegeben hat.
+            const coordinateMatch = ort.match(
+              /^\s*(-?\d+(?:[.,]\d+)?)\s*[,;]\s*(-?\d+(?:[.,]\d+)?)\s*$/
+            );
+
+            if (coordinateMatch) {
+              lat = Number(coordinateMatch[1].replace(",", "."));
+              lng = Number(coordinateMatch[2].replace(",", "."));
+
+              locationMessage =
+                `Koordinaten wurden direkt aus der Eingabe übernommen: ` +
+                `${lat}, ${lng}`;
+            } else if (ort) {
+              // Keine Koordinaten → Ort über Nominatim suchen.
+              const params = new URLSearchParams({
+                q: ort,
+                format: "jsonv2",
+                limit: "1"
+              });
+
+              const response = await fetch(
+                `https://nominatim.openstreetmap.org/search?${params.toString()}`,
+                {
+                  headers: {
+                    "User-Agent": process.env.NOMINATIM_USER_AGENT,
+                    "Accept": "application/json"
+                  }
+                }
+              );
+
+              if (!response.ok) {
+                throw new Error(
+                  `Geocoding fehlgeschlagen: HTTP ${response.status}`
+                );
+              }
+
+              const results = await response.json();
+
+              if (results.length > 0) {
+                lat = Number(results[0].lat);
+                lng = Number(results[0].lon);
+
+                locationMessage =
+                  `Ort "${ort}" wurde automatisch geocodiert: ` +
+                  `${lat}, ${lng}`;
+              } else {
+                locationMessage =
+                  `Für "${ort}" konnten keine Koordinaten gefunden werden.`;
+              }
+            }
+
             const data = {
-              id: clean(getField("ID")),
-              name: clean(getField("Name")),
-              ort: clean(getField("Ort oder Koordinaten")),
-              kategorie: getCheckboxes("Kategorie"),
-              status: clean(getField("Status")),
-              land: clean(getField("Land")),
-              beschreibung: clean(getField("Beschreibung")),
-              url: clean(getField("Webseite")),
-              tags: getTags("Tags")
+              id,
+              name,
+              lat,
+              lng,
+              kategorie,
+              status: normalizedStatus,
+              land,
+              beschreibung,
+              links: url
+                ? [
+                    {
+                      label: "Webseite",
+                      url: url
+                    }
+                  ]
+                : [],
+              tags
             };
 
             core.setOutput("json", JSON.stringify(data, null, 2));
+            core.setOutput("location_message", locationMessage);
 
       - name: JSON-Vorschlag als Kommentar posten
         uses: actions/github-script@v7
         env:
           JSON_DATA: ${{ steps.form.outputs.json }}
+          LOCATION_MESSAGE: ${{ steps.form.outputs.location_message }}
         with:
           script: |
             const json = process.env.JSON_DATA;
+            const locationMessage = process.env.LOCATION_MESSAGE;
 
             const comment = [
               "## JSON-Vorschlag",
               "",
-              "Bitte prüfe die Angaben, bevor der Eintrag in die Datensammlung übernommen wird, insbesondere die automatisch erstellten Geo-Koordinaten.",
+              locationMessage,
+              "",
+              "Bitte prüfe insbesondere die automatisch ermittelten Koordinaten.",
               "",
               "```json",
               json,
