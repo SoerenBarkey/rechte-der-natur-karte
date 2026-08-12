@@ -9,96 +9,55 @@
     "land": "Deutschland",
     "beschreibung": "Bayerisches Volksbegehren \"Rechte der Natur\" will der natürlichen Mitwelt, etwa der Isar, eigene Rechte in der Verfassung geben.",
     "links": [
-      {
-        "label": "Volksbegehren",
-        "url": "https://gibdernaturrecht.muc-mib.de/"
-      },
-      {
-        "label": "Kunstprojekt \"Flussabwärts denken\"",
-        "url": "https://www.publicartmuenchen.de/projekte/flussabwaerts-denken/"
-      }
+      { "label": "Volksbegehren", "url": "https://gibdernaturrecht.muc-mib.de/" },
+      { "label": "Kunstprojekt \"Flussabwärts denken\"", "url": "https://www.publicartmuenchen.de/projekte/flussabwaerts-denken/" }
     ],
-    "tags": [
-      "Fluss",
-      "Volksbegehren",
-      "Bayern"
-    ]
+    "tags": ["Fluss", "Volksbegehren", "Bayern"]
   },
   {
     "id": "lech",
     "name": "Lech",
-    "lat": 48.735,
+    "lat": 48.7350,
     "lng": 10.9364,
     "kategorie": "fluss",
     "status": "initiative",
     "land": "Deutschland",
     "beschreibung": "Bayerisches Volksbegehren \"Rechte der Natur\": Rechte für den Lech als Teil der natürlichen Mitwelt in der Verfassung verankern.",
     "links": [
-      {
-        "label": "Volksbegehren",
-        "url": "https://gibdernaturrecht.muc-mib.de/"
-      }
+      { "label": "Volksbegehren", "url": "https://gibdernaturrecht.muc-mib.de/" }
     ],
-    "tags": [
-      "Fluss",
-      "Volksbegehren",
-      "Bayern"
-    ]
+    "tags": ["Fluss", "Volksbegehren", "Bayern"]
   },
   {
     "id": "loisach",
     "name": "Loisach",
-    "lat": 47.491,
-    "lng": 11.095,
+    "lat": 47.4910,
+    "lng": 11.0950,
     "kategorie": "fluss",
     "status": "initiative",
     "land": "Deutschland",
     "beschreibung": "Initiative \"Der Loisach eine Stimme geben\" als Teil des Volksbegehrens \"Rechte der Natur\" in Oberbayern.",
     "links": [
-      {
-        "label": "Volksbegehren",
-        "url": "https://gibdernaturrecht.muc-mib.de/"
-      },
-      {
-        "label": "Hintergrundartikel (taz)",
-        "url": "https://taz.de/Fluesse-in-bayerischer-Landesverfassung/!5882167/"
-      },
-      {
-        "label": "Hintergrundartikel (Ethik heute)",
-        "url": "https://ethik-heute.org/wenn-ein-fluss-rechte-haette/"
-      }
+      { "label": "Volksbegehren", "url": "https://gibdernaturrecht.muc-mib.de/" },
+      { "label": "Hintergrundartikel (taz)", "url": "https://taz.de/Fluesse-in-bayerischer-Landesverfassung/!5882167/" },
+      { "label": "Hintergrundartikel (Ethik heute)", "url": "https://ethik-heute.org/wenn-ein-fluss-rechte-haette/" }
     ],
-    "tags": [
-      "Fluss",
-      "Volksbegehren",
-      "Bayern"
-    ]
+    "tags": ["Fluss", "Volksbegehren", "Bayern"]
   },
   {
     "id": "spree",
     "name": "Spree",
-    "lat": 52.52,
-    "lng": 13.405,
+    "lat": 52.5200,
+    "lng": 13.4050,
     "kategorie": "fluss",
     "status": "initiative",
     "land": "Deutschland",
     "beschreibung": "Petition \"Rechte der Spree anerkennen!\" fordert ein Gesetz, das der Spree eigene Rechte als juristische Person gibt. Begleitet von künstlerischen Projekten.",
     "links": [
-      {
-        "label": "Petition",
-        "url": "https://weact.campact.de/petitions/rechte-der-spree-anerkennen"
-      },
-      {
-        "label": "Kunstprojekt \"We are the River\"",
-        "url": "https://floating-berlin.org/cooperations/projects/we-are-the-river/"
-      }
+      { "label": "Petition", "url": "https://weact.campact.de/petitions/rechte-der-spree-anerkennen" },
+      { "label": "Kunstprojekt \"We are the River\"", "url": "https://floating-berlin.org/cooperations/projects/we-are-the-river/" }
     ],
-    "tags": [
-      "Fluss",
-      "Petition",
-      "Kunstprojekt",
-      "Berlin"
-    ]
+    "tags": ["Fluss", "Petition", "Kunstprojekt", "Berlin"]
   },
   {
     "id": "weser",
@@ -110,42 +69,24 @@
     "land": "Deutschland",
     "beschreibung": "Ausstellung \"Wir sind der Fluss: Was uns mit der Weser verbindet\" (Bremen 2026) zur Erörterung von Flussrechten und der Mensch-Umwelt-Beziehung.",
     "links": [
-      {
-        "label": "Ausstellung",
-        "url": "https://www.rechte-der-natur.de/de/veranstaltungen/veranstaltungsdetails/weser-ausstellung-flussrechte.html"
-      }
+      { "label": "Ausstellung", "url": "https://www.rechte-der-natur.de/de/veranstaltungen/veranstaltungsdetails/weser-ausstellung-flussrechte.html" }
     ],
-    "tags": [
-      "Fluss",
-      "Kunstprojekt",
-      "Ausstellung",
-      "Bremen"
-    ]
+    "tags": ["Fluss", "Kunstprojekt", "Ausstellung", "Bremen"]
   },
   {
     "id": "pader",
     "name": "Pader",
-    "lat": 51.717,
-    "lng": 8.767,
+    "lat": 51.7170,
+    "lng": 8.7670,
     "kategorie": "fluss",
     "status": "kunstprojekt",
     "land": "Deutschland",
     "beschreibung": "Kunstprojekt \"Tatort Paderborn: Der Fluss bin ich\" (2025) mit Ausstellungen, Workshops und Installationen zur Rechtspersonalisierung des Pader-Ökosystems.",
     "links": [
-      {
-        "label": "Initiative",
-        "url": "https://www.rechte-der-natur.de/de/aktuelles-details/vertrag-pader-kunstprojekt.html"
-      },
-      {
-        "label": "Kunstprojekt",
-        "url": "https://www.tatort-paderborn.de/de"
-      }
+      { "label": "Initiative", "url": "https://www.rechte-der-natur.de/de/aktuelles-details/vertrag-pader-kunstprojekt.html" },
+      { "label": "Kunstprojekt", "url": "https://www.tatort-paderborn.de/de" }
     ],
-    "tags": [
-      "Fluss",
-      "Kunstprojekt",
-      "Paderborn"
-    ]
+    "tags": ["Fluss", "Kunstprojekt", "Paderborn"]
   },
   {
     "id": "blumenweg",
@@ -157,16 +98,9 @@
     "land": "Deutschland",
     "beschreibung": "Wandernde Kunstaktion \"Der Blumenweg\" (2025) von Batya-Barbara Simon: 630 Tage, 630 Blumensträuße für die Rechte der Natur und Biodiversität im Grundgesetz. Kein fester Ort – Marker zeigt geografische Mitte Deutschlands.",
     "links": [
-      {
-        "label": "Mehr erfahren",
-        "url": "https://www.rechte-der-natur.de/de/aktuelles-details/kunst-blumenweg.html"
-      }
+      { "label": "Mehr erfahren", "url": "https://www.rechte-der-natur.de/de/aktuelles-details/kunst-blumenweg.html" }
     ],
-    "tags": [
-      "Kunstprojekt",
-      "Wandernd",
-      "Biodiversität"
-    ]
+    "tags": ["Kunstprojekt", "Wandernd", "Biodiversität"]
   },
   {
     "id": "saar",
@@ -178,99 +112,57 @@
     "land": "Deutschland",
     "beschreibung": "Transnationales Bürger:innen-Forum \"The Saar as a Worker (La Sarre ouvrière)\" am 04.07.2026 in Saarbrücken zu Flussrechten der Saar.",
     "links": [
-      {
-        "label": "Veranstaltung",
-        "url": "https://cure.uni-saarland.de/fr/evenements/the-saar-as-a-worker-la-sarre-ouvriere/"
-      }
+      { "label": "Veranstaltung", "url": "https://cure.uni-saarland.de/fr/evenements/the-saar-as-a-worker-la-sarre-ouvriere/" }
     ],
-    "tags": [
-      "Fluss",
-      "Veranstaltung",
-      "Transnational",
-      "Saarbrücken"
-    ]
+    "tags": ["Fluss", "Veranstaltung", "Transnational", "Saarbrücken"]
   },
+  
   {
     "id": "elbe",
     "name": "Elbe – Flussrechte",
-    "lat": 53.55,
-    "lng": 10.0,
+    "lat": 53.5500,
+    "lng": 10.0000,
     "kategorie": "fluss",
     "status": "initiative",
     "land": "Deutschland",
     "beschreibung": "Kampagne zur Verleihung von Persönlichkeitsrechten an die Elbe.",
     "links": [
-      {
-        "label": "Veranstaltung",
-        "url": "https://hias-hamburg.de/events/das-wesen-der-elbe-interdisziplinaere-perspektiven-auf-den-fluss-unserer-stadt/"
-      }
+      { "label": "Veranstaltung", "url": "https://hias-hamburg.de/events/das-wesen-der-elbe-interdisziplinaere-perspektiven-auf-den-fluss-unserer-stadt/" }
     ],
-    "tags": [
-      "Hamburg"
-    ]
+    "tags": ["Hamburg"]
   },
   {
     "id": "oder",
     "name": "Oder (Odra)",
-    "lat": 52.734,
-    "lng": 14.636,
+    "lat": 52.7340,
+    "lng": 14.6360,
     "kategorie": "fluss",
     "status": "gesetzentwurf",
     "land": "Polen",
     "beschreibung": "Polnische Initiative \"Osoba Odra\": Ist der Fluss eine Person? Zivilgesellschaftlicher Gesetzentwurf zur Verleihung von Persönlichkeitsrechten an die Oder – bisher auf polnischer Seite, mit grenzüberschreitender Relevanz für Deutschland.",
     "links": [
-      {
-        "label": "Initiative (DE)",
-        "url": "https://osobaodra.pl/de/startseite/"
-      },
-      {
-        "label": "Gesetzentwurf (EN)",
-        "url": "https://osobaodra.pl/en/draft-bill/"
-      }
+      { "label": "Initiative (DE)", "url": "https://osobaodra.pl/de/startseite/" },
+      { "label": "Gesetzentwurf (EN)", "url": "https://osobaodra.pl/en/draft-bill/" }
     ],
-    "tags": [
-      "Fluss",
-      "Gesetzentwurf",
-      "Polen",
-      "Transnational",
-      "Grenzfluss"
-    ]
+    "tags": ["Fluss", "Gesetzentwurf", "Polen", "Transnational", "Grenzfluss"]
   },
   {
     "id": "mar_menor",
     "name": "Mar Menor",
     "lat": 37.7188,
-    "lng": -0.7872,
+    "lng":  -0.7872,
     "kategorie": "meer",
     "status": "gesetz",
     "land": "Spanien",
     "beschreibung": "Anerkennung als Rechtssubjekt in Folge eines Volksbegehrens. Bürger:innen können stellvertretend vor Gericht klagen. Gesetz verabschiedet im Jahr 2022.",
     "links": [
-      {
-        "label": "Gesetz",
-        "url": "https://www.rechte-der-natur.de/files/opensauce/pdf/Gesetzestext%20Mar%20Menor%20%C3%BCbersetzt.pdf"
-      }
+      { "label": "Gesetz", "url": "https://www.rechte-der-natur.de/files/opensauce/pdf/Gesetzestext%20Mar%20Menor%20%C3%BCbersetzt.pdf" }
     ],
-    "tags": [
-      "Lagune",
-      "Gesetz",
-      "Spanien",
-      "Rechtssubjekt"
-    ]
-  },
-  {
-    "id": "moseltest",
-    "name": "Mosel",
-    "lat": 50.3533278,
-    "lng": 7.5943951,
-    "kategorie": [
-      "fluss",
-      "vereine"
-    ],
-    "status": "initiative",
-    "land": "Deutschland",
-    "beschreibung": "Beschreibung",
-    "links": [],
-    "tags": []
+    "tags": ["Lagune", "Gesetz", "Spanien", "Rechtssubjekt"]
   }
 ]
+
+
+
+
+
