@@ -52,25 +52,11 @@ body:
         - label: Wald
         - label: Meere & Seen
         - label: Gesetzesentwürfe
-        - label: Gesetz
         - label: Kunst & Kultur
-        - label: Literatur
         - label: Vereine, Stiftungen & NGOs
         - label: Wissenschaft
         - label: Rechtsexpert:innen
         - label: Zivilgesellschaft
-    validations:
-      required: true
-
-  - type: dropdown
-    id: status
-    attributes:
-      label: Status
-      description: Bitte wähle den aktuellen Status des Eintrags. Wenn nichts passt, wähle bitte "Initiative".
-      options:
-        - Initiative
-        - Gesetzesentwurf
-        - Gesetz
     validations:
       required: true
 
@@ -99,15 +85,6 @@ body:
       label: Webseite
       description: Falls vorhanden, die URL zur Webseite des Eintrags.
       placeholder: "https://example.org"
-    validations:
-      required: false
-
-  - type: input
-    id: tags
-    attributes:
-      label: Tags
-      description: Mehrere Tags bitte durch Kommata trennen.
-      placeholder: "Fluss, Bayern"
     validations:
       required: false
 
