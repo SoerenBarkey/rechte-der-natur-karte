@@ -1,7 +1,7 @@
 [
   {
     "id": "isar",
-    "name": "Isar",
+    "name": "Rechte für die Isar",
     "lat": 47.375556,
     "lng": 11.408056,
     "kategorie": [
@@ -23,7 +23,7 @@
   },
   {
     "id": "lech",
-    "name": "Lech",
+    "name": "Rechte für den Lech",
     "lat": 48.735,
     "lng": 10.9364,
     "kategorie": [
@@ -71,7 +71,7 @@
   },
   {
     "id": "spree",
-    "name": "Spree",
+    "name": "Rechte der Spree",
     "lat": 52.52,
     "lng": 13.405,
     "kategorie": [
@@ -94,7 +94,7 @@
   },
   {
     "id": "weser",
-    "name": "Weser",
+    "name": "\"Wir sind der Fluss. Was uns mit der Weser verbindet\"",
     "lat": 53.0793,
     "lng": 8.8017,
     "kategorie": [
@@ -102,7 +102,7 @@
       "kunst"
     ],
     "land": "Deutschland",
-    "beschreibung": "Bremen ohne die Weser? Unvorstellbar. Der Fluss prägt unsere Stadt und ganze Regionen. Wir spazieren an seinen Ufern, schwimmen in seinem Wasser, leben an und mit ihm. Doch wie geht es eigentlich der Weser selbst? Seit dem 19. Jahrhundert greift der Mensch in ihren Verlauf und ihr Ökosystem ein – mit spürbaren Folgen für Natur und Mensch. Was würde die Weser erzählen, wenn sie sprechen könnte? Wie beeinflusst sie unser Leben? Und was würde es bedeuten, ihr eigene Rechte zuzugestehen? Die Ausstellung lädt dazu ein, den Fluss und unsere Beziehung zu ihm in neuem Licht zu betrachten.<br><b>Kontakt:</b> info@klimabuchmesse.de",
+    "beschreibung": "Bremen ohne die Weser? Unvorstellbar. Der Fluss prägt unsere Stadt und ganze Regionen. Wir spazieren an seinen Ufern, schwimmen in seinem Wasser, leben an und mit ihm. Doch wie geht es eigentlich der Weser selbst? Seit dem 19. Jahrhundert greift der Mensch in ihren Verlauf und ihr Ökosystem ein – mit spürbaren Folgen für Natur und Mensch. Was würde die Weser erzählen, wenn sie sprechen könnte? Wie beeinflusst sie unser Leben? Und was würde es bedeuten, ihr eigene Rechte zuzugestehen? Die Ausstellung lädt dazu ein, den Fluss und unsere Beziehung zu ihm in neuem Licht zu betrachten.<br><b>Kontakt:</b> 0421 303 82 84",
     "links": [
       {
         "label": "Ausstellung",
@@ -116,7 +116,7 @@
   },
   {
     "id": "pader",
-    "name": "Pader",
+    "name": "Tatort Paderborn: Der Fluss bin ich",
     "lat": 51.717,
     "lng": 8.767,
     "kategorie": [
@@ -153,7 +153,7 @@
   },
   {
     "id": "saar",
-    "name": "Saar",
+    "name": "The Saar as a Worker",
     "lat": 49.2354,
     "lng": 6.9969,
     "kategorie": [
@@ -179,7 +179,7 @@
       "wissenschaft"
     ],
     "land": "Deutschland",
-    "beschreibung": "Kampagne zur Verleihung von Persönlichkeitsrechten an die Elbe.",
+    "beschreibung": "Das 'Wesen' der Elbe. Interdisziplinäre Perspektiven auf den Fluss unserer Stadt",
     "links": [
       {
         "label": "Veranstaltung",
@@ -189,7 +189,7 @@
   },
   {
     "id": "oder",
-    "name": "Oder (Odra)",
+    "name": "Oder (Odra) - Ist der Fluss eine Person?",
     "lat": 52.734,
     "lng": 14.636,
     "kategorie": [
