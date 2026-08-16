@@ -26,7 +26,9 @@ jobs:
               const regex = new RegExp(
                 `### ${label}\\s*\\n\\n([\\s\\S]*?)(?=\\n### |$)`
               );
+
               const match = body.match(regex);
+
               return match ? match[1].trim() : "";
             }
 
@@ -34,6 +36,7 @@ jobs:
               if (!value || value === "_No response_") {
                 return "";
               }
+
               return value.trim();
             }
 
@@ -47,20 +50,9 @@ jobs:
               return value
                 .split("\n")
                 .filter(line => line.startsWith("- [x]"))
-                .map(line => line.replace("- [x]", "").trim());
-            }
-
-            function getTags(label) {
-              const value = clean(getField(label));
-
-              if (!value) {
-                return [];
-              }
-
-              return value
-                .split(",")
-                .map(tag => tag.trim())
-                .filter(tag => tag.length > 0);
+                .map(line =>
+                  line.replace("- [x]", "").trim()
+                );
             }
 
             const categoryMap = {
@@ -69,51 +61,46 @@ jobs:
               "Meere & Seen": "meer",
               "Gesetzesentwürfe": "gesetzentwurf",
               "Kunst & Kultur": "kunst",
-              "Literatur": "literatur",
               "Vereine, Stiftungen & NGOs": "vereine",
               "Wissenschaft": "wissenschaft",
               "Rechtsexpert:innen": "recht",
               "Zivilgesellschaft": "zivil"
             };
 
-            const statusMap = {
-              "Initiative": "initiative",
-              "Gesetzesentwurf": "gesetzentwurf",
-              "Gesetz": "gesetz"
-            };
-
             const id = clean(getField("ID"));
             const name = clean(getField("Name"));
             const ort = clean(getField("Ort oder Koordinaten"));
             const categories = getCheckboxes("Kategorie");
-            const status = clean(getField("Status"));
             const land = clean(getField("Land"));
             const beschreibung = clean(getField("Beschreibung"));
             const url = clean(getField("Webseite"));
-            const tags = getTags("Tags");
 
             const kategorie = categories
               .map(category => categoryMap[category])
               .filter(Boolean);
 
-            const normalizedStatus = statusMap[status] || status.toLowerCase();
-
             let lat = null;
             let lng = null;
             let locationMessage = "";
 
-            // Prüfen, ob der Nutzer bereits Koordinaten eingegeben hat.
+            // Prüfen, ob direkt Koordinaten eingegeben wurden.
             const coordinateMatch = ort.match(
               /^\s*(-?\d+(?:[.,]\d+)?)\s*[,;]\s*(-?\d+(?:[.,]\d+)?)\s*$/
             );
 
             if (coordinateMatch) {
-              lat = Number(coordinateMatch[1].replace(",", "."));
-              lng = Number(coordinateMatch[2].replace(",", "."));
+              lat = Number(
+                coordinateMatch[1].replace(",", ".")
+              );
+
+              lng = Number(
+                coordinateMatch[2].replace(",", ".")
+              );
 
               locationMessage =
                 `Koordinaten wurden direkt aus der Eingabe übernommen: ` +
                 `${lat}, ${lng}`;
+
             } else if (ort) {
               // Keine Koordinaten → Ort über Nominatim suchen.
               const params = new URLSearchParams({
@@ -126,7 +113,8 @@ jobs:
                 `https://nominatim.openstreetmap.org/search?${params.toString()}`,
                 {
                   headers: {
-                    "User-Agent": process.env.NOMINATIM_USER_AGENT,
+                    "User-Agent":
+                      process.env.NOMINATIM_USER_AGENT,
                     "Accept": "application/json"
                   }
                 }
@@ -147,6 +135,7 @@ jobs:
                 locationMessage =
                   `Ort "${ort}" wurde automatisch geocodiert: ` +
                   `${lat}, ${lng}`;
+
               } else {
                 locationMessage =
                   `Für "${ort}" konnten keine Koordinaten gefunden werden.`;
@@ -159,7 +148,6 @@ jobs:
               lat,
               lng,
               kategorie,
-              status: normalizedStatus,
               land,
               beschreibung,
               links: url
@@ -169,12 +157,18 @@ jobs:
                       url: url
                     }
                   ]
-                : [],
-              tags
+                : []
             };
 
-            core.setOutput("json", JSON.stringify(data, null, 2));
-            core.setOutput("location_message", locationMessage);
+            core.setOutput(
+              "json",
+              JSON.stringify(data, null, 2)
+            );
+
+            core.setOutput(
+              "location_message",
+              locationMessage
+            );
 
       - name: JSON-Vorschlag als Kommentar posten
         uses: actions/github-script@v7
@@ -184,7 +178,8 @@ jobs:
         with:
           script: |
             const json = process.env.JSON_DATA;
-            const locationMessage = process.env.LOCATION_MESSAGE;
+            const locationMessage =
+              process.env.LOCATION_MESSAGE;
 
             const comment = [
               "## JSON-Vorschlag",
