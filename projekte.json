@@ -381,5 +381,17 @@
         "url": "www.ra-kanzlei-soehnlein.de"
       }
     ]
+  },
+  {
+    "id": "daenner",
+    "name": "Marianna Dänner",
+    "lat": 49.4059302,
+    "lng": 8.6012125,
+    "kategorie": ["recht", "wissenschaft"],
+    "land": "Deutschland",
+    "beschreibung": "Juristische Expertise; Forschung zu den Vorteilen und konkreten Mehrwerten von Rechten der Natur mit Fokus auf dem deutschen Recht; Rechte der Natur im Unternehmensrecht (\"Nature on the Board\"); Verknüpfung von Rechten der Natur mit dem sog. Ökosystem(dienst)leistungskonzept<br><b>Kontakt:</b> Marianna.daenner@ipr.uni-heidelberg.de",
+    "links": [
+      { "label": "Webseite", "url": "www.ipr.uni-heidelberg.de/personen/weller/daenner/" }
+    ]
   }
 ]
