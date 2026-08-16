@@ -23,71 +23,29 @@
       --shadow: 0 4px 24px rgba(13,59,46,0.10);
     }
 
-    html, body { height: 100%; font-family: 'DM Sans', sans-serif; background: var(--sand); color: var(--text); }
-
-    /* HEADER */
-    header {
-      background: var(--green-deep);
-      color: white;
-      padding: 1.5rem 2rem 1.2rem;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-      position: relative;
-      overflow: hidden;
-    }
-    header::after {
-      content: '';
-      position: absolute;
-      bottom: -1px; left: 0; right: 0; height: 24px;
-      background: var(--sand);
-      clip-path: ellipse(55% 100% at 50% 100%);
-    }
-    .header-title h1 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-    }
-    .header-title p {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.65);
-      margin-top: 4px;
-      font-weight: 300;
-    }
-    .header-stats {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      padding-bottom: 4px;
-    }
-    .stat { text-align: center; }
-    .stat-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 600; line-height: 1; }
-    .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.55); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; }
+    html, body { height: 100%; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; background: var(--sand); color: var(--text); }
 
     /* FILTERS */
     .filter-bar {
       display: flex;
-      gap: 10px;
-      padding: 1.2rem 2rem 0.8rem;
+      gap: 8px;
+      padding: 1rem 2rem 0.8rem;
       flex-wrap: wrap;
       align-items: center;
+      background: white;
+      border-bottom: 1px solid var(--border);
     }
-    .filter-label { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; margin-right: 4px; }
+    .filter-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; margin-right: 4px; }
     .filter-btn {
-      padding: 5px 14px;
+      padding: 4px 12px;
       border-radius: 20px;
       border: 1.5px solid var(--border);
-      background: white;
-      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-      font-size: 0.82rem;
+      background: var(--sand);
+      font-family: inherit;
+      font-size: 0.8rem;
       color: var(--text-muted);
       cursor: pointer;
       transition: all 0.15s;
-      font-weight: 400;
     }
     .filter-btn:hover { border-color: var(--green-light); color: var(--green-mid); }
     .filter-btn.active { background: var(--green-deep); color: white; border-color: var(--green-deep); font-weight: 500; }
@@ -96,32 +54,20 @@
     .main-layout {
       display: grid;
       grid-template-columns: 1fr 340px;
-      height: calc(100vh - 160px);
+      height: calc(100vh - 58px);
       min-height: 480px;
-      gap: 0;
     }
 
-    /* MAP */
-    #map {
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      border-right: 1px solid var(--border);
-    }
+    #map { width: 100%; height: 100%; z-index: 1; border-right: 1px solid var(--border); }
 
     /* SIDEBAR */
-    .sidebar {
-      overflow-y: auto;
-      background: white;
-      display: flex;
-      flex-direction: column;
-    }
+    .sidebar { overflow-y: auto; background: white; display: flex; flex-direction: column; }
     .sidebar-header {
       padding: 1rem 1.25rem 0.75rem;
       border-bottom: 1px solid var(--border);
       position: sticky; top: 0; background: white; z-index: 10;
     }
-    .sidebar-header h2 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--text); }
+    .sidebar-header h2 { font-family: Georgia, serif; font-size: 1rem; font-weight: 600; color: var(--text); }
     .sidebar-header p { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
 
     .project-list { flex: 1; padding: 0.75rem; display: flex; flex-direction: column; gap: 8px; }
@@ -137,25 +83,21 @@
     .project-card:hover { border-color: var(--green-light); box-shadow: 0 2px 12px rgba(26,92,69,0.1); transform: translateY(-1px); }
     .project-card.active { border-color: var(--green-mid); background: var(--green-pale); box-shadow: 0 2px 16px rgba(26,92,69,0.14); }
 
-    .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 4px; }
-    .card-name { font-size: 0.9rem; font-weight: 500; color: var(--text); line-height: 1.3; }
-    .status-badge {
-      font-size: 0.68rem; font-weight: 500; padding: 2px 8px; border-radius: 10px;
-      text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; flex-shrink: 0;
-    }
-    .badge-initiative { background: #fff3cd; color: #856404; }
-    .badge-aktiv { background: #d1fae5; color: #065f46; }
-    .badge-gesetz { background: #dbeafe; color: #1e40af; }
-    .badge-geplant { background: #f3e8ff; color: #6b21a8; }
-    .badge-gesetzentwurf { background: #e0f2fe; color: #0369a1; }
-    .badge-kunstprojekt { background: #fce7f3; color: #9d174d; }
-    .badge-veranstaltung { background: #f0fdf4; color: #166534; }
+    .card-name { font-size: 0.9rem; font-weight: 500; color: var(--text); line-height: 1.3; margin-bottom: 6px; }
+    .card-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 6px; }
 
-    .card-desc { font-size: 0.79rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 6px; }
-    .card-tags { display: flex; flex-wrap: wrap; gap: 4px; }
-    .tag { font-size: 0.7rem; padding: 2px 7px; border-radius: 8px; background: var(--sand); color: var(--earth); font-weight: 400; }
-    .card-link { font-size: 0.78rem; color: var(--water); text-decoration: none; display: inline-flex; align-items: center; gap: 3px; margin-top: 6px; font-weight: 500; }
-    .card-link:hover { text-decoration: underline; }
+    .card-cats { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+    .cat-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 10px;
+      background: var(--green-pale);
+      color: var(--green-mid);
+      border: 1px solid rgba(26,94,69,0.2);
+      display: inline-block;
+      white-space: nowrap;
+    }
 
     /* POPUP */
     .leaflet-popup-content-wrapper {
@@ -164,24 +106,23 @@
       border: 1px solid var(--border) !important;
       padding: 0 !important;
     }
-    .leaflet-popup-content { margin: 0 !important; min-width: 220px; max-width: 270px; }
+    .leaflet-popup-content { margin: 0 !important; min-width: 220px; max-width: 280px; }
     .popup-inner { padding: 14px 16px; }
-    .popup-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.3; }
-    .popup-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 8px; }
-    .popup-links { display: flex; flex-direction: column; gap: 0; }
+    .popup-name { font-family: Georgia, serif; font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.3; }
+    .popup-cat { font-size: 0.72rem; color: var(--green-mid); font-weight: 500; margin-bottom: 8px; }
+    .popup-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 4px; }
+    .popup-links { display: flex; flex-direction: column; }
     .popup-link {
       display: block; text-align: center;
       background: var(--green-deep); color: white;
-      font-size: 0.8rem; font-weight: 500;
-      padding: 7px 12px;
-      text-decoration: none;
-      transition: background 0.15s;
-      margin: 0 !important;
+      font-size: 0.8rem; font-weight: 500; padding: 7px 12px;
+      text-decoration: none; transition: background 0.15s;
       border-top: 1px solid rgba(255,255,255,0.12);
     }
     .popup-link:last-child { border-radius: 0 0 10px 10px; }
     .popup-link:hover { background: var(--green-mid); }
-    .card-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+
+    .card-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
     .card-link {
       font-size: 0.78rem; color: var(--water); text-decoration: none;
       display: inline-flex; align-items: center; gap: 3px; font-weight: 500;
@@ -190,104 +131,86 @@
     }
     .card-link:hover { background: var(--water-light); }
 
-    /* CATEGORY DOT */
-    .cat-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
-
-    /* EMPTY STATE */
     .empty-state { padding: 2rem; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
-
-    /* FOOTER */
-    footer { background: var(--green-deep); color: rgba(255,255,255,0.5); text-align: center; font-size: 0.75rem; padding: 0.7rem 1rem; }
-    footer a { color: rgba(255,255,255,0.65); }
 
     @media (max-width: 700px) {
       .main-layout { grid-template-columns: 1fr; grid-template-rows: 50vh 1fr; height: auto; }
       .sidebar { max-height: 50vh; }
-      header { padding: 1rem 1rem 1.2rem; }
-      .filter-bar { padding: 0.8rem 1rem 0.5rem; }
+      .filter-bar { padding: 0.7rem 1rem; }
     }
   </style>
 </head>
 <body>
 
-<!--
-<header>
-  <div class="header-title">
-    <h1>Rechte der Natur</h1>
-    <p>Initiativen, Projekte & gesetzliche Vorstöße in Deutschland und Europa</p>
-  </div>
-  <div class="header-stats">
-    <div class="stat"><div class="stat-num" id="count-total">—</div><div class="stat-label">Projekte</div></div>
-    <div class="stat"><div class="stat-num" id="count-gesetze">—</div><div class="stat-label">Gesetze</div></div>
-    <div class="stat"><div class="stat-num" id="count-laender">—</div><div class="stat-label">Länder</div></div>
-  </div>
-</header>
-  -->
-
+<!-- Filter-Buttons werden per JavaScript generiert -->
 <div class="filter-bar">
   <span class="filter-label">Filtern:</span>
   <button class="filter-btn active" data-filter="alle">Alle</button>
-  <button class="filter-btn" data-filter="fluss">🫧 Flüsse</button>
-  <button class="filter-btn" data-filter="oekosystem">🌲 Ökosysteme</button>
-  <button class="filter-btn" data-filter="meer">🌊 Meere & Seen</button>
-  <button class="filter-btn" data-filter="kunst">🎨 Kunstprojekte</button>
-  <button class="filter-btn" data-filter-status="gesetzentwurf">📋 Gesetzentwürfe</button>
-  <button class="filter-btn" data-filter-status="gesetz">📜 Gesetze</button>
+  <div id="filter-buttons" style="display:contents;"></div>
 </div>
 
 <div class="main-layout">
   <div id="map"></div>
   <aside class="sidebar">
     <div class="sidebar-header">
-      <h2>Projekte</h2>
+      <h2>Einträge</h2>
       <p id="sidebar-count">Alle Einträge</p>
     </div>
     <div class="project-list" id="project-list"></div>
   </aside>
 </div>
 
-<!--
-<footer>
-  Diese Karte ist ein offenes Community-Projekt. Kennst du weitere Initiativen? <a href="mailto:barkey@uni-potsdam.de">Schreib uns!</a>
-  &nbsp;·&nbsp; Kartendaten: <a href="https://openstreetmap.org">© OpenStreetMap</a>
-</footer>
--->
-
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-// =====================================================
-// KARTENINITIALISIERUNG
-// =====================================================
-const map = L.map('map', { zoomControl: true, scrollWheelZoom: true }).setView([51.5, 10.0], 5);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  maxZoom: 18
-}).addTo(map);
 
 // =====================================================
-// FARBEN & MARKER
+// EINZIGE QUELLE FÜR KATEGORIEN
+// Hier pflegst du Kategorien – Buttons und Labels
+// werden automatisch daraus generiert.
 // =====================================================
-const CATEGORY_COLORS = {
-  fluss:      '#1D9E75',
-  oekosystem: '#2d6a2d',
-  meer:       '#1d6fa4',
-  gesetz:     '#D85A30',
-  default:    '#7a5c3a'
+const KATEGORIE_LABELS = {
+  fluss:         'Flüsse',
+  wald:          'Wald',
+  meer:          'Meere & Seen',
+  gesetzentwurf: 'Gesetzentwürfe',
+  kunst:         'Kunst & Kultur',
+  vereine:       'Vereine, Stiftungen & NGOs',
+  wissenschaft:  'Wissenschaft',
+  recht:         'Rechtsexpert:innen',
+  zivil:         'Zivilgesellschaft',
 };
 
-const STATUS_CONFIG = {
-  initiative:    { label: 'Initiative',    cls: 'badge-initiative' },
-  aktiv:         { label: 'Aktiv',         cls: 'badge-aktiv' },
-  gesetz:        { label: 'Gesetz',        cls: 'badge-gesetz' },
-  geplant:       { label: 'Geplant',       cls: 'badge-geplant' },
-  gesetzentwurf: { label: 'Gesetzentwurf', cls: 'badge-gesetzentwurf' },
-  kunstprojekt:  { label: 'Kunstprojekt',  cls: 'badge-kunstprojekt' },
-  veranstaltung: { label: 'Veranstaltung', cls: 'badge-veranstaltung' },
-};
+function katLabel(kategorie) {
+  const cats = Array.isArray(kategorie) ? kategorie : [kategorie];
+  return cats.map(c => KATEGORIE_LABELS[c] || c).join(' · ');
+}
 
-function makeIcon(kategorie, selected = false) {
-  const color = CATEGORY_COLORS[kategorie] || CATEGORY_COLORS.default;
+// =====================================================
+// FILTER-BUTTONS GENERIEREN
+// =====================================================
+function renderFilterButtons() {
+  const container = document.getElementById('filter-buttons');
+  container.innerHTML = Object.entries(KATEGORIE_LABELS).map(([key, label]) =>
+    `<button class="filter-btn" data-filter="${key}">${label}</button>`
+  ).join('');
+
+  // Alle Buttons (inkl. "Alle") mit Event-Listener versehen
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      activeCard = null;
+      render();
+    });
+  });
+}
+
+// =====================================================
+// MARKER
+// =====================================================
+function makeIcon(selected = false) {
+  const color = '#1a5c45';
   const size = selected ? 36 : 28;
   const r = selected ? 10 : 7;
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size+10}" viewBox="0 0 ${size} ${size+10}">
@@ -300,14 +223,25 @@ function makeIcon(kategorie, selected = false) {
 }
 
 // =====================================================
-// DATEN LADEN & KARTE AUFBAUEN
+// KARTE
+// =====================================================
+const map = L.map('map', { zoomControl: true, scrollWheelZoom: true }).setView([51.5, 10.0], 5);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  maxZoom: 18
+}).addTo(map);
+
+// =====================================================
+// STATE
 // =====================================================
 let allProjekte = [];
 let markers = {};
 let activeCard = null;
 let activeFilter = 'alle';
-let activeFilterType = 'kategorie'; // 'kategorie' or 'status'
 
+// =====================================================
+// DATEN LADEN
+// =====================================================
 async function loadData() {
   try {
     const res = await fetch('projekte.json');
@@ -316,47 +250,40 @@ async function loadData() {
     console.warn('projekte.json nicht gefunden, lade Beispieldaten.');
     allProjekte = BEISPIELDATEN;
   }
-  //initStats();
+  renderFilterButtons();
   render();
 }
 
-function initStats() {
-  document.getElementById('count-total').textContent = allProjekte.length;
-  document.getElementById('count-gesetze').textContent = allProjekte.filter(p => p.status === 'gesetz').length;
-  const laender = new Set(allProjekte.map(p => p.land).filter(Boolean));
-  document.getElementById('count-laender').textContent = laender.size;
-}
-
+// =====================================================
+// RENDER
+// =====================================================
 function render() {
-  // Marker entfernen
   Object.values(markers).forEach(m => map.removeLayer(m));
   markers = {};
 
   const visible = activeFilter === 'alle'
     ? allProjekte
-    : activeFilterType === 'status'
-      ? allProjekte.filter(p => p.status === activeFilter)
-      : allProjekte.filter(p => p.kategorie === activeFilter);
+    : allProjekte.filter(p =>
+        Array.isArray(p.kategorie)
+          ? p.kategorie.includes(activeFilter)
+          : p.kategorie === activeFilter
+      );
 
-  // Sidebar
   const list = document.getElementById('project-list');
   list.innerHTML = '';
-  document.getElementById('sidebar-count').textContent = `${visible.length} Eintrag${visible.length !== 1 ? 'e' : ''}`;
+  document.getElementById('sidebar-count').textContent =
+    `${visible.length} Eintrag${visible.length !== 1 ? 'e' : ''}`;
 
   if (visible.length === 0) {
-    list.innerHTML = '<div class="empty-state">Keine Projekte in dieser Kategorie.</div>';
+    list.innerHTML = '<div class="empty-state">Keine Einträge in dieser Kategorie.</div>';
     return;
   }
 
   visible.forEach(p => {
-    // Marker
-    const marker = L.marker([p.lat, p.lng], { icon: makeIcon(p.kategorie) }).addTo(map);
-    const statusCfg = STATUS_CONFIG[p.status] || STATUS_CONFIG.initiative;
-    const tagsHtml = (p.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
-    // Links: unterstützt sowohl links-Array als auch einzelne url
-    const linkItems = p.links && p.links.length
+    const marker = L.marker([p.lat, p.lng], { icon: makeIcon(false) }).addTo(map);
+    const linkItems = p.links?.length
       ? p.links
-      : (p.url && p.url !== '#' ? [{ label: 'Zur Initiative', url: p.url }] : []);
+      : (p.url && p.url !== '#' ? [{ label: 'Mehr erfahren', url: p.url }] : []);
     const linksHtml = linkItems.length
       ? `<div class="popup-links">${linkItems.map(l =>
           `<a href="${l.url}" target="_blank" rel="noopener" class="popup-link">${l.label} →</a>`
@@ -366,59 +293,46 @@ function render() {
     marker.bindPopup(`
       <div class="popup-inner">
         <div class="popup-name">${p.name}</div>
-        <span class="status-badge ${statusCfg.cls}">${statusCfg.label}</span>
-        <div class="popup-desc" style="margin-top:6px;">${p.beschreibung}</div>
-      </div>
-      ${linksHtml}
-    `, { maxWidth: 280 });
+        <div class="popup-cat">${katLabel(p.kategorie)}</div>
+        <div class="popup-desc">${p.beschreibung}</div>
+      </div>${linksHtml}`, { maxWidth: 300 });
 
     marker.on('click', () => activateCard(p.id));
     markers[p.id] = marker;
 
-    // Sidebar-Karte
     const card = document.createElement('div');
     card.className = 'project-card';
     card.id = `card-${p.id}`;
     card.innerHTML = `
-      <div class="card-top">
-        <div class="card-name">
-          <span class="cat-dot" style="background:${CATEGORY_COLORS[p.kategorie] || CATEGORY_COLORS.default}"></span>
-          ${p.name}
-        </div>
-        <span class="status-badge ${statusCfg.cls}">${statusCfg.label}</span>
-      </div>
+      <div class="card-name">${p.name}</div>
       <div class="card-desc">${p.beschreibung}</div>
-      <div class="card-tags">${tagsHtml}</div>
       ${linkItems.length ? `<div class="card-links">${linkItems.map(l =>
         `<a href="${l.url}" target="_blank" rel="noopener" class="card-link">${l.label} ↗</a>`
       ).join('')}</div>` : ''}
-    `;
+      <div class="card-cats">
+        ${(Array.isArray(p.kategorie) ? p.kategorie : [p.kategorie])
+          .map(c => `<span class="cat-label">${KATEGORIE_LABELS[c] || c}</span>`)
+          .join('')}
+      </div>`;
     card.addEventListener('click', () => activateCard(p.id));
     list.appendChild(card);
   });
 }
 
 function activateCard(id) {
-  // Vorherigen deaktivieren
   if (activeCard) {
-    const prev = allProjekte.find(p => p.id === activeCard);
-    if (prev && markers[activeCard]) markers[activeCard].setIcon(makeIcon(prev.kategorie, false));
+    if (markers[activeCard]) markers[activeCard].setIcon(makeIcon(false));
     const prevEl = document.getElementById(`card-${activeCard}`);
     if (prevEl) prevEl.classList.remove('active');
   }
-
   activeCard = id;
   const p = allProjekte.find(p => p.id === id);
   if (!p) return;
-
-  // Marker hervorheben
   if (markers[id]) {
-    markers[id].setIcon(makeIcon(p.kategorie, true));
+    markers[id].setIcon(makeIcon(true));
     markers[id].openPopup();
     map.setView([p.lat, p.lng], Math.max(map.getZoom(), 8), { animate: true });
   }
-
-  // Karte hervorheben & scrollen
   const cardEl = document.getElementById(`card-${id}`);
   if (cardEl) {
     cardEl.classList.add('active');
@@ -427,104 +341,14 @@ function activateCard(id) {
 }
 
 // =====================================================
-// FILTER
-// =====================================================
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    if (btn.dataset.filterStatus) {
-      activeFilter = btn.dataset.filterStatus;
-      activeFilterType = 'status';
-    } else {
-      activeFilter = btn.dataset.filter;
-      activeFilterType = 'kategorie';
-    }
-    activeCard = null;
-    render();
-  });
-});
-
-// =====================================================
-// BEISPIELDATEN (Fallback falls projekte.json fehlt)
+// BEISPIELDATEN
 // =====================================================
 const BEISPIELDATEN = [
   {
-    id: "spree",
-    name: "Spree – Rechte der Natur",
-    lat: 52.5200, lng: 13.4050,
-    kategorie: "fluss",
-    status: "initiative",
-    land: "Deutschland",
-    beschreibung: "Berliner Bürgerinitiative für die rechtliche Anerkennung der Spree als Rechtssubjekt.",
-    url: "#",
-    tags: ["Berlin", "Bürgerinitiative", "Urban"]
-  },
-  {
-    id: "elbe",
-    name: "Elbe – Flussrechte",
-    lat: 53.5500, lng: 10.0000,
-    kategorie: "fluss",
-    status: "initiative",
-    land: "Deutschland",
-    beschreibung: "Kampagne zur Verleihung von Persönlichkeitsrechten an die Elbe.",
-    url: "#",
-    tags: ["Hamburg", "Petition"]
-  },
-  {
-    id: "pader",
-    name: "Pader – Rechte der Natur",
-    lat: 51.7189, lng: 8.7539,
-    kategorie: "fluss",
-    status: "aktiv",
-    land: "Deutschland",
-    beschreibung: "Kommunale Initiative für die Rechte des Quellflüsschens Pader in Paderborn.",
-    url: "#",
-    tags: ["Paderborn", "Kommunal", "Quellfluss"]
-  },
-  {
-    id: "mar-menor",
-    name: "Mar Menor (Spanien)",
-    lat: 37.7200, lng: -0.7800,
-    kategorie: "meer",
-    status: "gesetz",
-    land: "Spanien",
-    beschreibung: "Erstes Ökosystem Europas mit gesetzlich verankerten Eigenrechten (2022).",
-    url: "https://www.bbc.com/news/world-europe-58921884",
-    tags: ["Spanien", "Gesetz", "Vorbild", "2022"]
-  },
-  {
-    id: "waddenzee",
-    name: "Wattenmeer Initiative",
-    lat: 53.2600, lng: 5.2300,
-    kategorie: "oekosystem",
-    status: "initiative",
-    land: "Niederlande",
-    beschreibung: "Niederländisch-deutsche Initiative für Rechte des UNESCO-Wattenmeers.",
-    url: "#",
-    tags: ["Niederlande", "UNESCO", "Grenzüberschreitend"]
-  },
-  {
-    id: "rhein",
-    name: "Rhein – Rechtssubjekt",
-    lat: 50.9413, lng: 6.9583,
-    kategorie: "fluss",
-    status: "geplant",
-    land: "Deutschland",
-    beschreibung: "Transnationaler Ansatz für Persönlichkeitsrechte des Rheins über Landesgrenzen.",
-    url: "#",
-    tags: ["Köln", "International", "Transnatonal"]
-  },
-  {
-    id: "schwarzwald",
-    name: "Schwarzwald-Ökosystem",
-    lat: 48.1000, lng: 8.2000,
-    kategorie: "oekosystem",
-    status: "initiative",
-    land: "Deutschland",
-    beschreibung: "Forschungs- und Rechtsprojekt zu Waldrechten im Schwarzwald.",
-    url: "#",
-    tags: ["Baden-Württemberg", "Wald", "Forschung"]
+    id: "spree", name: "Spree", lat: 52.52, lng: 13.405,
+    kategorie: "fluss", land: "Deutschland",
+    beschreibung: "Petition zur Anerkennung der Spree als Rechtssubjekt in Berlin.",
+    links: [{ label: "Petition", url: "https://weact.campact.de/petitions/rechte-der-spree-anerkennen" }]
   }
 ];
 
