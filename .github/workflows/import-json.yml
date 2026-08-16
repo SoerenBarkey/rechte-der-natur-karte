@@ -40,7 +40,7 @@ jobs:
               }
             );
 
-            // Nach dem Kommentar suchen, der unseren JSON-Vorschlag enthält.
+            // Nach dem Kommentar suchen, der den JSON-Vorschlag enthält.
             const jsonComment = comments
               .reverse()
               .find(comment =>
@@ -118,7 +118,6 @@ jobs:
               "id",
               "name",
               "kategorie",
-              "status",
               "land",
               "beschreibung"
           ]
@@ -164,7 +163,6 @@ jobs:
               "meer",
               "gesetzentwurf",
               "kunst",
-              "literatur",
               "vereine",
               "wissenschaft",
               "recht",
@@ -195,18 +193,6 @@ jobs:
                       + ", ".join(invalid)
                   )
 
-          # Status
-          allowed_statuses = {
-              "initiative",
-              "gesetzentwurf",
-              "gesetz"
-          }
-
-          if new_entry.get("status") not in allowed_statuses:
-              errors.append(
-                  "Ungültiger Status."
-              )
-
           # Links
           if not isinstance(
               new_entry.get("links"),
@@ -214,15 +200,6 @@ jobs:
           ):
               errors.append(
                   "Links muss eine Liste sein."
-              )
-
-          # Tags
-          if not isinstance(
-              new_entry.get("tags"),
-              list
-          ):
-              errors.append(
-                  "Tags muss eine Liste sein."
               )
 
           # Abbrechen, wenn Fehler gefunden wurden
@@ -307,4 +284,4 @@ jobs:
 
           gh issue comment \
             "${{ github.event.issue.number }}" \
-            --body "✅ Der Eintrag wurde erfolgreich validiert und automatisch in \`projekte.json\` übernommen."
+            --body "Der Eintrag wurde erfolgreich validiert und automatisch in \`projekte.json\` übernommen."
