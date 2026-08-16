@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rechte der Natur – Initiativen & Projekte</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -131,6 +133,21 @@
     }
     .card-link:hover { background: var(--water-light); }
 
+
+    /* MARKER CLUSTER */
+    .marker-cluster-small,
+    .marker-cluster-medium,
+    .marker-cluster-large { background-color: rgba(26,92,69,0.2); }
+    .marker-cluster-small div,
+    .marker-cluster-medium div,
+    .marker-cluster-large div {
+      background-color: #1a5c45;
+      color: white;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
     .empty-state { padding: 2rem; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
 
     @media (max-width: 700px) {
@@ -161,6 +178,7 @@
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
 
 // =====================================================
@@ -225,7 +243,11 @@ function makeIcon(selected = false) {
 // =====================================================
 // KARTE
 // =====================================================
-const map = L.map('map', { zoomControl: true, scrollWheelZoom: true }).setView([51.5, 10.0], 5);
+const map = L.map("map", { zoomControl: true, scrollWheelZoom: true, maxZoom: 18 }).setView([51.5, 10.0], 5);
+let clusterGroup = L.markerClusterGroup({ 
+  showCoverageOnHover: false,
+  maxClusterRadius: 20
+}).addTo(map);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   maxZoom: 18
@@ -258,7 +280,7 @@ async function loadData() {
 // RENDER
 // =====================================================
 function render() {
-  Object.values(markers).forEach(m => map.removeLayer(m));
+  clusterGroup.clearLayers();
   markers = {};
 
   const visible = activeFilter === 'alle'
@@ -280,7 +302,8 @@ function render() {
   }
 
   visible.forEach(p => {
-    const marker = L.marker([p.lat, p.lng], { icon: makeIcon(false) }).addTo(map);
+    const marker = L.marker([p.lat, p.lng], { icon: makeIcon(false) });
+    clusterGroup.addLayer(marker);
     const linkItems = p.links?.length
       ? p.links
       : (p.url && p.url !== '#' ? [{ label: 'Mehr erfahren', url: p.url }] : []);
