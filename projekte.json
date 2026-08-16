@@ -4,89 +4,79 @@
     "name": "Isar",
     "lat": 47.375556,
     "lng": 11.408056,
-    "kategorie": "fluss",
-    "status": "initiative",
+    "kategorie": ["fluss", "zivil"],
     "land": "Deutschland",
     "beschreibung": "Bayerisches Volksbegehren \"Rechte der Natur\" will der natürlichen Mitwelt, etwa der Isar, eigene Rechte in der Verfassung geben.",
     "links": [
       { "label": "Volksbegehren", "url": "https://gibdernaturrecht.muc-mib.de/" },
       { "label": "Kunstprojekt \"Flussabwärts denken\"", "url": "https://www.publicartmuenchen.de/projekte/flussabwaerts-denken/" }
-    ],
-    "tags": ["Fluss", "Volksbegehren", "Bayern"]
+    ]
   },
   {
     "id": "lech",
     "name": "Lech",
     "lat": 48.7350,
     "lng": 10.9364,
-    "kategorie": "fluss",
-    "status": "initiative",
+    "kategorie": ["fluss","zivil"],
     "land": "Deutschland",
     "beschreibung": "Bayerisches Volksbegehren \"Rechte der Natur\": Rechte für den Lech als Teil der natürlichen Mitwelt in der Verfassung verankern.",
     "links": [
       { "label": "Volksbegehren", "url": "https://gibdernaturrecht.muc-mib.de/" }
-    ],
-    "tags": ["Fluss", "Volksbegehren", "Bayern"]
+    ]
   },
   {
     "id": "loisach",
-    "name": "Loisach",
+    "name": "Loisachbündnis",
     "lat": 47.4910,
     "lng": 11.0950,
-    "kategorie": "fluss",
-    "status": "initiative",
+    "kategorie": ["fluss", "zivil"],
     "land": "Deutschland",
-    "beschreibung": "Initiative \"Der Loisach eine Stimme geben\" als Teil des Volksbegehrens \"Rechte der Natur\" in Oberbayern.",
+    "beschreibung": "Wir sind eine interdisziplinäre Gruppe aus den Bereichen Journalismus, Bildende Kunst, Ethnologie, Politikwissenschaften, Wildnispädagogik, Biologie und Architektur, die sich für die Rechte der Natur engagiert. Unsere Initiative möchte die Stimmen von Flüssen, Seen und Lagunen hörbar machen – vor dem Gesetz und im Bewusstsein von uns Menschen. Die Initiative startete 2022 mit der Idee, zwischen der Loisach und dem neuseeländischen Whanganui River ein Flussbündnis zu schaffen. Zur Vorbereitung laden wir vom 12. bis 18. September 2026 zum „Dialogue of Water Bodies“ mit Vertreter*innen des Whanganui River und der spanischen Lagune Mar Menor ein. Die Isel (Tirol) und die Reuss (Schweiz) werden Botschafter:innen zu dieser wandernden Konferenz ins Loisachtal schicken. Neben informellem Austausch, Führungen und Fachgesprächen gibt es zwei öffentliche Veranstaltungen: im Kloster Benediktbeuern und in der Bayerischen Akademie der Schönen Künste (Infos: zeitnah auf www.loisachbuendnis.de).<br><b>Kontakt:</b> info@loisachbuendnis.de",
     "links": [
       { "label": "Volksbegehren", "url": "https://gibdernaturrecht.muc-mib.de/" },
       { "label": "Hintergrundartikel (taz)", "url": "https://taz.de/Fluesse-in-bayerischer-Landesverfassung/!5882167/" },
-      { "label": "Hintergrundartikel (Ethik heute)", "url": "https://ethik-heute.org/wenn-ein-fluss-rechte-haette/" }
-    ],
-    "tags": ["Fluss", "Volksbegehren", "Bayern"]
+      { "label": "Hintergrundartikel (Ethik heute)", "url": "https://ethik-heute.org/wenn-ein-fluss-rechte-haette/" },
+      { "label": "Webseite", "url": "https://loisachbuendnis.de"}
+    ]
   },
   {
     "id": "spree",
     "name": "Spree",
     "lat": 52.5200,
     "lng": 13.4050,
-    "kategorie": "fluss",
-    "status": "initiative",
+    "kategorie": ["fluss","kunst", "zivil"],
     "land": "Deutschland",
-    "beschreibung": "Petition \"Rechte der Spree anerkennen!\" fordert ein Gesetz, das der Spree eigene Rechte als juristische Person gibt. Begleitet von künstlerischen Projekten.",
+    "beschreibung": "Die Initiative Rechte der Spree setzt sich für die rechtliche Anerkennung der Spree als lebendiges Ökosystem mit eigenen Rechten ein. Gemeinsam mit Juristinnen, Wissenschaftlerinnen, Künstlerinnen und zivilgesellschaftlichen Akteurinnen entwickeln wir einen Gesetzesvorschlag, der dem Fluss Rechte auf Existenz, Regeneration und Vertretung verleiht. Durch Forschung, Kunst, Bildungsformate, Bürgerbeteiligung und politische Arbeit schaffen wir Bewusstsein für die Bedeutung der Spree als Lebensgrundlage für Mensch und Mitwelt. Unser Ziel ist es, neue Formen ökologischer Demokratie zu erproben und die Interessen des Flusses stärker in gesellschaftliche und politische Entscheidungsprozesse einzubringen. Die Initiative verbindet lokale Aktivitäten in Berlin und Brandenburg mit internationalen Bewegungen für die Rechte der Natur und setzt sich für eine regenerative Zukunft unserer Gewässer ein. <br><b>Kontakt:</b> e.schlichter@rechte-der-natur.org, kaa@rechte-der-spree.org, albrecht@greenlegal.eu. jakob@symbiotic-lab.com",
     "links": [
       { "label": "Petition", "url": "https://weact.campact.de/petitions/rechte-der-spree-anerkennen" },
       { "label": "Kunstprojekt \"We are the River\"", "url": "https://floating-berlin.org/cooperations/projects/we-are-the-river/" }
-    ],
-    "tags": ["Fluss", "Petition", "Kunstprojekt", "Berlin"]
+    ]
   },
   {
     "id": "weser",
     "name": "Weser",
     "lat": 53.0793,
     "lng": 8.8017,
-    "kategorie": "fluss",
-    "status": "kunstprojekt",
+    "kategorie": ["fluss", "kunst"],
     "land": "Deutschland",
-    "beschreibung": "Ausstellung \"Wir sind der Fluss: Was uns mit der Weser verbindet\" (Bremen 2026) zur Erörterung von Flussrechten und der Mensch-Umwelt-Beziehung.",
+    "beschreibung": "Bremen ohne die Weser? Unvorstellbar. Der Fluss prägt unsere Stadt und ganze Regionen. Wir spazieren an seinen Ufern, schwimmen in seinem Wasser, leben an und mit ihm. Doch wie geht es eigentlich der Weser selbst? Seit dem 19. Jahrhundert greift der Mensch in ihren Verlauf und ihr Ökosystem ein – mit spürbaren Folgen für Natur und Mensch. Was würde die Weser erzählen, wenn sie sprechen könnte? Wie beeinflusst sie unser Leben? Und was würde es bedeuten, ihr eigene Rechte zuzugestehen? Die Ausstellung lädt dazu ein, den Fluss und unsere Beziehung zu ihm in neuem Licht zu betrachten.<br><b>Kontakt:</b> info@klimabuchmesse.de",
     "links": [
-      { "label": "Ausstellung", "url": "https://www.rechte-der-natur.de/de/veranstaltungen/veranstaltungsdetails/weser-ausstellung-flussrechte.html" }
-    ],
-    "tags": ["Fluss", "Kunstprojekt", "Ausstellung", "Bremen"]
+      { "label": "Ausstellung", "url": "https://bzb-bremen.de/allgemein/wir-sind-der-fluss-was-uns-mit-der-weser-verbindet/" },
+      { "label": "Webseite", "url": "https://www.hafenmuseum-bremen.de" }
+    ]
   },
   {
     "id": "pader",
     "name": "Pader",
     "lat": 51.7170,
     "lng": 8.7670,
-    "kategorie": "fluss",
-    "status": "kunstprojekt",
+    "kategorie": ["kunst","fluss"],
     "land": "Deutschland",
     "beschreibung": "Kunstprojekt \"Tatort Paderborn: Der Fluss bin ich\" (2025) mit Ausstellungen, Workshops und Installationen zur Rechtspersonalisierung des Pader-Ökosystems.",
     "links": [
       { "label": "Initiative", "url": "https://www.rechte-der-natur.de/de/aktuelles-details/vertrag-pader-kunstprojekt.html" },
       { "label": "Kunstprojekt", "url": "https://www.tatort-paderborn.de/de" }
-    ],
-    "tags": ["Fluss", "Kunstprojekt", "Paderborn"]
+    ]
   },
   {
     "id": "blumenweg",
@@ -94,27 +84,23 @@
     "lat": 51.0,
     "lng": 10.0,
     "kategorie": "kunst",
-    "status": "kunstprojekt",
     "land": "Deutschland",
     "beschreibung": "Wandernde Kunstaktion \"Der Blumenweg\" (2025) von Batya-Barbara Simon: 630 Tage, 630 Blumensträuße für die Rechte der Natur und Biodiversität im Grundgesetz. Kein fester Ort – Marker zeigt geografische Mitte Deutschlands.",
     "links": [
       { "label": "Mehr erfahren", "url": "https://www.rechte-der-natur.de/de/aktuelles-details/kunst-blumenweg.html" }
-    ],
-    "tags": ["Kunstprojekt", "Wandernd", "Biodiversität"]
+    ]
   },
   {
     "id": "saar",
     "name": "Saar",
     "lat": 49.2354,
     "lng": 6.9969,
-    "kategorie": "fluss",
-    "status": "veranstaltung",
+    "kategorie": ["fluss","zivil"],
     "land": "Deutschland",
     "beschreibung": "Transnationales Bürger:innen-Forum \"The Saar as a Worker (La Sarre ouvrière)\" am 04.07.2026 in Saarbrücken zu Flussrechten der Saar.",
     "links": [
       { "label": "Veranstaltung", "url": "https://cure.uni-saarland.de/fr/evenements/the-saar-as-a-worker-la-sarre-ouvriere/" }
-    ],
-    "tags": ["Fluss", "Veranstaltung", "Transnational", "Saarbrücken"]
+    ]
   },
   
   {
@@ -122,47 +108,133 @@
     "name": "Elbe – Flussrechte",
     "lat": 53.5500,
     "lng": 10.0000,
-    "kategorie": "fluss",
-    "status": "initiative",
+    "kategorie": ["fluss","wissenschaft"],
     "land": "Deutschland",
     "beschreibung": "Kampagne zur Verleihung von Persönlichkeitsrechten an die Elbe.",
     "links": [
       { "label": "Veranstaltung", "url": "https://hias-hamburg.de/events/das-wesen-der-elbe-interdisziplinaere-perspektiven-auf-den-fluss-unserer-stadt/" }
-    ],
-    "tags": ["Hamburg"]
+    ]
   },
   {
     "id": "oder",
     "name": "Oder (Odra)",
     "lat": 52.7340,
     "lng": 14.6360,
-    "kategorie": "fluss",
-    "status": "gesetzentwurf",
+    "kategorie": ["fluss","zivil", "gesetzentwurf"],
     "land": "Polen",
     "beschreibung": "Polnische Initiative \"Osoba Odra\": Ist der Fluss eine Person? Zivilgesellschaftlicher Gesetzentwurf zur Verleihung von Persönlichkeitsrechten an die Oder – bisher auf polnischer Seite, mit grenzüberschreitender Relevanz für Deutschland.",
     "links": [
       { "label": "Initiative (DE)", "url": "https://osobaodra.pl/de/startseite/" },
       { "label": "Gesetzentwurf (EN)", "url": "https://osobaodra.pl/en/draft-bill/" }
-    ],
-    "tags": ["Fluss", "Gesetzentwurf", "Polen", "Transnational", "Grenzfluss"]
+    ]
   },
   {
-    "id": "mar_menor",
-    "name": "Mar Menor",
-    "lat": 37.7188,
-    "lng":  -0.7872,
-    "kategorie": "meer",
-    "status": "gesetz",
-    "land": "Spanien",
-    "beschreibung": "Anerkennung als Rechtssubjekt in Folge eines Volksbegehrens. Bürger:innen können stellvertretend vor Gericht klagen. Gesetz verabschiedet im Jahr 2022.",
+    "id": "winterstiftung",
+    "name": "Winter Stiftung für Rechte der Natur",
+    "lat": 53.550556,
+    "lng":  9.993333,
+    "kategorie": ["wissenschaft","vereine"],
+    "land": "Deutschland",
+    "beschreibung": "Die Winter-Stiftung verwirklicht ihren Satzungszweck durch:<br>- die finanzielle Förderung und gegebenenfalls Auszeichnung vornehmlich rechtswissenschaftlich geprägter Arbeiten und Vorhaben, die einen Fortschritt für den Umweltschutz – insbesondere den Pflanzen-, Tier-, Arten- und Biotopschutz – zum Gegenstand haben,<br>- die finanzielle Förderung wissenschaftlicher, insbesondere rechtswissenschaftlicher Veranstaltungen, deren Ziel die Fortentwicklung des Umweltschutzes und des Umweltrechts im Interesse der ökologischen Nachhaltigkeit ist,<br>- die Auszeichnung herausragender wissenschaftlicher Arbeiten auf den Gebieten des Umweltrechts durch die Vergabe von Stiftungspreisen, <br>- finanzielle Förderung der Veröffentlichung bzw. Verbreitung herausragender wissenschaftlicher Arbeiten auf den Gebieten des Umweltrechts, <br>- finanzielle Förderung von Forschungsprojekten, Veranstaltungen, die die o.g. Ziele verfolgen.<br><b>Kontakt:</b> info@winter-stiftung.de",
     "links": [
-      { "label": "Gesetz", "url": "https://www.rechte-der-natur.de/files/opensauce/pdf/Gesetzestext%20Mar%20Menor%20%C3%BCbersetzt.pdf" }
-    ],
-    "tags": ["Lagune", "Gesetz", "Spanien", "Rechtssubjekt"]
+      { "label": "Webseite", "url": "https://www.winter-stiftung.de" }
+    ]
+  }, 
+  {
+    "id": "stiftungkulturbahnhof",
+    "name": "Stiftung Kulturbahnhof Ottensoos",
+    "lat": 49.509808,
+    "lng":  11.340831,
+    "kategorie": ["kunst","vereine"],
+    "land": "Deutschland",
+    "beschreibung": "Dauer- und Sonderausstellungen zum Thema nachhaltige Entwicklung, interdisziplinäre Veranstaltungen, Podcasts, Videos,  eigene Veröffentlichungen, Netzwerktätigkeit.<br><b>Kontakt:</b> info@kulturbahnhof-ottensoos.de",
+    "links": [
+      { "label": "Webseite", "url": "https://www.kulturbahnhof-ottensoos.de" }
+    ]
+  },
+  {
+    "id": "lausacker",
+    "name": "Lausacker Bonn - Interessengemeinschaft für Biodiversitätsschutz & Stadtnatur",
+    "lat": 50.7597011,
+    "lng":  7.0803982,
+    "kategorie": ["vereine"],
+    "land": "Deutschland",
+    "beschreibung": "Ehrenamtliche Natur- und Klimaschutzinitiative im rund 20 Hektar großen Landschaftsschutzgebiet Lausacker in Bonn-Graurheindorf.<br><b>Kontakt:</b> info@lausackerbonn.de",
+    "links": [
+      { "label": "Webseite", "url": "https://www.lausackerbonn.de" }
+    ]
+  },
+  {
+    "id": "gaionauten",
+    "name": "Gaionauten e.V.",
+    "lat": 51.340333,
+    "lng":  12.37475,
+    "kategorie": ["vereine"],
+    "land": "Deutschland",
+    "beschreibung": "Parlament der Lebewesen, Resonanz-Labor, Immersion und Empowerment.<br><b>Kontakt:</b> jh@resonanz-labor.de",
+    "links": [
+      { "label": "Webseite", "url": "https://www.resonanz-labor.de" }
+    ]
+  },
+  {
+    "id": "bergstaesserwald",
+    "name": "Netzwerk Bergsträßer Wald",
+    "lat": 49.7461882,
+    "lng":  8.5593104,
+    "kategorie": ["vereine","zivil", "wald"],
+    "land": "Deutschland",
+    "beschreibung": "Schutz der Wälder an der Bergstraße - Vernetzung der Orte - Unterstützung von Runden Tischen zum Thema Wald.<br><b>Kontakt:</b> hallo@netzwerk-wald.org",
+    "links": [
+      { "label": "Webseite", "url": "https://www.netwerk-wald.org" }
+    ]
+  }, 
+  {
+    "id": "bundregiodonau",
+    "name": "BUND Regionalverband Donau-Iller und KV Ulm",
+    "lat": 48.3857093,
+    "lng":  9.9497264,
+    "kategorie": ["vereine"],
+    "land": "Deutschland",
+    "beschreibung": "Natur- und Umweltschutz, lokale und regionale Arbeit, Naturpädagogik,  Pflanz- und Pflegearbeiten, rechtliche Stellungnahmen, Mitsprache in verschiedenen gesellschaftlichen und politischen Gremien, FÖJ, Praktika, soziale Arbeitsstunden.<br><b>Kontakt:</b> Jana.rettig@bund.net",
+    "links": [
+      { "label": "Webseite", "url": "https://www.BUND-Ulm.de" }
+    ]
+  },
+  {
+    "id": "undinstitut",
+    "name": "und.Institut für Kunst, Kultur und Zukunftsfähigkeit e.V. (und.Institut)",
+    "lat": 52.5068367,
+    "lng":  13.0951008,
+    "kategorie": ["kunst", "vereine"],
+    "land": "Deutschland",
+    "beschreibung": "Das gemeinnützige und.Institut für Kunst, Kultur und Zukunftsfähigkeit e.V. (und.Institut), gegründet 2004, bietet innovativen Akteur*innen im Spannungsfeld von Kultur und Nachhaltigkeit (Zukunftsfähigkeit) eine rechtsfähige Körperschaft, um quer durch gesellschaftliche Sektoren und Milieus exemplarische Modelle Zukunft stiftender Praktiken zu entwickeln und umzusetzen. Aktuelle Beispiele sind \"Erkundungen am Epochenrand\",  die \"Lebendigkeitswerkstatt\", die Projekte \"Singing Planet\", \"werdschätzung\" sowie, seit 2026, die \"Träummale\". Leitend ist das \"kreative Wir\". Hinzu kommen diskursbildende Beiträge der Team-Mitglieder Dr. Andreas Weber und Dr. Hildegard Kurt. Der partizipative Ansatz des und.Instituts wurde mehrfach ausgezeichnet. So etwa porträtierte die zweisprachige Publikation \"Kreative Umwelt. Ein Handbuch für Kunst- und Nachhaltigkeitsinitiativen in Berlin\", (Ecologic Institut, 2017) das und.Institut als eine von dreizehn »wegweisenden Initiativen« in Berlin.<br><b>Kontakt:</b> h.kurt@und-institut.de",
+    "links": [
+      { "label": "Webseite", "url": "https://www.und-institut.de" }
+    ]
+  },
+  {
+    "id": "nabulebach",
+    "name": "Nabu Ortsgruppe Lebach-Schmelz",
+    "lat": 49.4167104,
+    "lng":  6.8309201,
+    "kategorie": ["vereine"],
+    "land": "Deutschland",
+    "beschreibung": "Unterstützung lokaler Naturschutz Projekte, Spendensammelaktionen, CleanUp Aktionen in der Natur.<br><b>Kontakt:</b> utewinter1@t-online.de, nabu.lebach.schmelz@gmail.com",
+    "links": [
+      
+    ]
+  },
+  {
+    "id": "klimabuchmesse",
+    "name": "Klimabuchmesse e.V.",
+    "lat": 51.3398225,
+    "lng":  12.3660208,
+    "kategorie": ["vereine", "kunst"],
+    "land": "Deutschland",
+    "beschreibung": "Literatur und Lesungen, die Lust auf eine lebenswerte Zukunft machen. Klimaschutz und Biodiversität erhalten.<br><b>Kontakt:</b> info@klimabuchmesse.de",
+    "links": [
+      { "label": "Webseite", "url": "https://www.klimabuchmesse.de" }
+    ]
   }
+  
 ]
-
-
-
-
-
