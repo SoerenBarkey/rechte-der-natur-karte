@@ -41,4 +41,4 @@ Bei einem neuen Eintrag können mehrere Kategorien vergeben werden.
 
 Der Code dieses Projekts steht unter der **MIT-Lizenz** – er darf frei genutzt, verändert und weitergegeben werden.
 
-Die gesammelten Daten stehen unter **CC BY-NC-SA 4.0** – sie dürfen geteilt und bearbeitet werden, jedoch nicht für kommerzielle Zwecke, und nur unter denselben Bedingungen.
+Die Daten aus der Datei projekte.json dürfen nicht weiter genutzt werden.
