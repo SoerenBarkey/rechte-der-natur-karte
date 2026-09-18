@@ -393,5 +393,26 @@
     "links": [
       { "label": "Webseite", "url": "www.ipr.uni-heidelberg.de/personen/weller/daenner/" }
     ]
-  }
+  },
+    {
+        "id": "gybn",
+        "name": "GYBN Austria – Österreichisches Jugendbiodiversitätsnetzwerk",
+        "lat": 48.2083537,
+        "lng": 16.3725042,
+        "kategorie": [
+            "vereine"
+        ],
+        "land": "Österreich",
+        "beschreibung": "Wir sind junge Menschen aus Österreich, die durch die Liebe und Leidenschaft für die Artenvielfalt und die Natur verbunden sind. GYBN Austria ist Teil einer weltweiten Community, die sich angesichts der globalen Biodiversitätskrise für den Schutz und die Förderung der Artenvielfalt einsetzt. Zu unseren Zielen gehören der Erhalt und die Förderung der Artenvielfalt, die Sensibilisierung für die Dringlichkeit der Biodiversitätskrise sowie die Stärkung der Beteiligung junger Menschen. In den vergangenen Jahren haben wir uns auch besonders intensiv mit der EU-Wiederherstellungsverordnung auseinandergesetzt.<br>Seit 2026 arbeiten wir auch zu Rechten der Natur und veranstalten gemeinsam mit anderen Menschen den Tag der Rechte der Natur.<br><b>Kontakt:</b> verein@gybnaustria.at, info@rightsofnatureday.earth",
+        "links": [
+            {
+                "label": "Webseite des GYBN",
+                "url": "https://www.gybnaustria.at/"
+            },
+            {
+                "label": "Webseite des Tags der Rechte der Natur",
+                "url": "https://www.rightsofnatureday.earth/"
+            }
+        ]
+    }
 ]
