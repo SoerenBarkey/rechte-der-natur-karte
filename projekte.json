@@ -414,5 +414,32 @@
                 "url": "https://www.rightsofnatureday.earth/"
             }
         ]
+    }, 
+  {
+        "id": "wildbienenmitrechten",
+        "name": "Freiburger Wildbienen mit Rechten e.V.",
+        "lat": 47.9960901,
+        "lng": 7.8494005,
+        "kategorie": ["vereine", "zivil"],
+        "land": "Deutschland",
+        "beschreibung": "kommunale RdN<br><b>Kontakt:</b> christian.cray@posteo.de",
+        "links": []
+    },
+    {
+        "id": "tirolerumweltanwaltschaft",
+        "name": "Tiroler Umweltanwaltschaft",
+        "lat": 47.0290713,
+        "lng": 12.2331098,
+        "kategorie": [
+            "vereine"
+        ],
+        "land": "Österreich",
+        "beschreibung": "Vom Wesen des Gletscherflusses Isel – ein Prozess. In einer Zeit der Klima- und Biodiversitätskrise sowie gesellschaftlicher Verwerfungen werden mittlerweile auch im globalen Norden die bisherigen Konzepte der Mensch-Natur Beziehung hinterfragt. Initiativen mit durchaus unterschiedlichen Zugängen betreffend die Positionierung der Species Mensch auf dem Planeten entstehen und werden erprobt. Die Tiroler Umweltanwaltschaft begann 2024 mit im Einzugsbereich der Isel lebenden Menschen einen Prozess, um die Beziehung der Menschen mit dem Gletscherfluss Isel in Tirol/Österreich zu thematisieren. Dies mit dem Ziel, Bewusstsein zu schaffen für das eigene Verhältnis mit der Mitwelt und die Beziehungen dazu. Zentrale Aufgabe dabei ist, die Beziehungen zur Isel besprechbar zu machen und damit Grundlage zu schaffen für einen respektvollen Zugang zur Mitwelt und zur Eigenrechtsfähigkeit der Isel und der Natur.<br><b>Kontakt:</b> landesumweltanwalt@tirol.gv.at",
+        "links": [
+            {
+                "label": "Webseite",
+                "url": "https://www.die-isel.at"
+            }
+        ]
     }
 ]
