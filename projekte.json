@@ -422,7 +422,7 @@
         "lng": 7.8494005,
         "kategorie": ["vereine", "zivil"],
         "land": "Deutschland",
-        "beschreibung": "kommunale RdN<br><b>Kontakt:</b> christian.cray@posteo.de",
+        "beschreibung": "Kommunale Rechte der Natur<br><b>Kontakt:</b> christian.cray@posteo.de",
         "links": []
     },
     {
@@ -439,6 +439,27 @@
             {
                 "label": "Webseite",
                 "url": "https://www.die-isel.at"
+            }
+        ]
+    },
+  {
+        "id": "organismendemokratie",
+        "name": "Club Real GbR, Organismendemokratie e.V.",
+        "lat": 52.5562221,
+        "lng": 13.3755892,
+        "kategorie": [
+            "vereine", "kunst"
+        ],
+        "land": "Deutschland",
+        "beschreibung": "Wem gehört die Stadt? Wer lebt auf öffentlichen Grünflächen und wer entscheidet, was dort passiert? Auf diese Fragen findet die seit 2019 bestehende Organismendemokratie auf der Grünfläche Osloer Str. 107/108 ganz neue Antworten. Alle Lebewesen dieser Gemeinschaft – von der Schnecke über den Eschenahorn bis zum Wurzelknöllchenbakterium – haben die gleichen politischen Rechte. <br> Seit 2019 tagt ein bis zweimal jährlich ein Parlament der Lebewesen und entscheidet, wie es mit der Fläche weitergeht. Aus den über 400 Bürgerinnen-Spezies werden 15 Arten ausgelost, über eine menschliche Vertretung am Parlament der Lebewesen teilzunehmen. Seit 2024 ist die Organismendemokratie die Außenspielstätte des Ballhaus Ost.<br><b>Kontakt:</b> marianna.sonneck@clubreal.de",
+        "links": [
+            {
+                "label": "Webseite",
+                "url": "https://organismendemokratie.org/"
+            },
+            {
+                "label": "Social Media", 
+                "url": "https://www.instagram.com/organismsdemocracy"
             }
         ]
     }
