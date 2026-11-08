@@ -462,5 +462,24 @@
                 "url": "https://www.instagram.com/organismsdemocracy"
             }
         ]
+    },
+  {
+        "id": "reussinitiative",
+        "name": "Verein Rechtsperson Reuss / Reuss-Initiative",
+        "lat": 47.052144,
+        "lng": 8.3058123,
+        "kategorie": ["Fluss", "Verein"],
+        "land": "Schweiz",
+        "beschreibung": "Der Verein \"Rechtsperson Reuss\" ist einer der Initianten für die \"Reuss-Initiative\" welche Grundrechte und Rechtspersönlichkeit für die Gewässer im Kanton Luzern fordern. Die Volksinitiative wurde im Januar 2026 erfolgreich bei der Staatskanzlei mit den notwendigen Unterschriften eingereicht und wird voraussichtlich im Jahr 2027 im Kantonsparlament beraten, bevor es zur Volksabstimmung kommt. Der Verein Rechtsperson Reuss engagiert sich generell für die Rechte der Natur, insbesondere auch für die Grundrechte der Schweine im Kanton Luzern. <br><b>Kontakt:</b> +41 41 4221618<br>https://www.linkedin.com/company/rechtsperson-reuss/",
+        "links": [
+            {
+                "label": "Webseite des Vereins",
+                "url": "https://www.r-reuss.ch"
+            },
+            {
+                "label": "Webseite Reuss Initiative",
+                "url": "https://www.reuss-initiative.ch"
+            }
+        ]
     }
 ]
